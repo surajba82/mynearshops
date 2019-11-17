@@ -32,22 +32,27 @@ router.post('/signup', (req, res, next) => {
                 });
             }else{
                 const admin = new Admin({
+                    _id: new mongoose.Types.ObjectId(),
                     fullName: fullName,
                     email: email,
                     password: hash
                 });
 
-                return admin.save();
+                admin.save()
+                .then(admin => {
+                    res.status.json({
+                        message: 'Admin Created'
+                    })
+                })
+                .catch(error => {
+                    res.status(500).json({
+                        message: error
+                    })
+                });
 
             }
 
 
-        })
-        .then(doc => {
-            res.status(201).json({
-                message: 'Admin Created',
-                data: doc
-            });
         })
         .catch(error => {
             res.status(500).json({
