@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const bcrypt = require('bcrypt');
 const Admin = require('../../models/admin/adminSchema');
-const router = express.router();
+const router = express.Router();
 
 router.post('/signup', (req, res, next) => {
 
