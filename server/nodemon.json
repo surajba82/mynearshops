@@ -1,6 +1,7 @@
 {
     "env": {
         "MONGODB_USERNAME": "baurais",
-        "MONGODB_PASSWORD": "baurais"
+        "MONGODB_PASSWORD": "baurais",
+        "SECRET_KEY": "mylocalstore"
     }
 }

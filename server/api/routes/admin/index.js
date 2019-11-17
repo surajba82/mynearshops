@@ -3,6 +3,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const Admin = require('../../models/admin/adminSchema');
 const router = express.Router();
+const jwt = require('jsonwebtoken');
 
 router.post('/signup', (req, res, next) => {
 
@@ -40,7 +41,7 @@ router.post('/signup', (req, res, next) => {
 
                 admin.save()
                 .then(admin => {
-                    res.status.json({
+                    res.status(201).json({
                         message: 'Admin Created'
                     })
                 })
@@ -64,6 +65,57 @@ router.post('/signup', (req, res, next) => {
 
     })
 
+});
+
+router.post('/login', (req, res, next) => {
+   Admin.findOne({ email: req.body.email })
+   .exec()
+   .then(admin => {
+       if(!admin){
+          return res.status(401).json({
+              message: 'Admin doesn\'t exists'
+          });
+       }
+
+       bcrypt.compare(req.body.password, admin.password, (err, result) => {
+           if(err){
+               return res.status(500).json({
+                   message: 'Login Failed'
+               })
+           }else{
+               if(result){
+                   //create token
+                   const payload = {
+                       userId: admin._id,
+                       iat:  Math.floor(Date.now() / 1000) - 30,
+                        exp: Math.floor(Date.now() / 1000) + (60 * 60),
+                   }
+                   jwt.sign(payload, 'mylocalstore', (err, token) => {
+                    if(err){
+                        return res.status(500).json({
+                            error: err
+                        });
+                    }else{
+                        res.status(200).json({
+                            message: 'Login Successfully',
+                            data: {
+                                token: token,
+                                userId: admin._id,
+                                email: admin.email
+                            }
+                        });
+                    }
+                   });
+               }else{
+                   res.status(401).json({
+                       message: 'Wrong Password'
+                   })
+               }
+           }
+       })
+
+
+   })
 });
 
 module.exports = router;

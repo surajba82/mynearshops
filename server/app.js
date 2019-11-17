@@ -14,6 +14,7 @@ const adminRoutes = require('./api/routes/admin/index');
 
 
 app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
