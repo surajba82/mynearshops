@@ -42,27 +42,19 @@ router.post('/create', (req, res, next) => {
 
 
 router.get('/', (req, res, next) => {
-
-    // Product.find({})
-    // .select('_id name price productPic slug')
-    // .exec()
-    // .then(products => {
-    //     res.status(200).json({
-    //         message: products
-    //     });
-    // })
-    // .catch(er => {
-    //     res.status(500).json({
-    //         error: er
-    //     });
-    // })
-
-    res.status(200).json({
-        message: {
-            stores : []
-        }
-    });
-
+    Stores.find({})
+    .select('_id name address1 postcode storeUrl')
+    .exec()
+    .then(stores => {
+        res.status(200).json({
+            data: stores
+        });
+    })
+    .catch(er => {
+        res.status(500).json({
+            error: er
+        });
+    })
 });
 
 
