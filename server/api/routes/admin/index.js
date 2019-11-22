@@ -7,13 +7,25 @@ const jwt = require('jsonwebtoken');
 
 router.post('/signup', (req, res, next) => {
 
-    const { fullName, email, password } = req.body;
+    const { fullName, email, phoneNumber, type, password } = req.body;
 
     if(fullName.trim() === ""){
         return res.status(404).json({
             message: 'Empty Full Name'
         });
     }
+
+    if(type.trim() === ""){
+        return res.status(404).json({
+            message: 'Empty Full Name'
+        });
+    }
+    if(type !== "superuser" && type !== "admin"){
+        return res.status(300).json({
+            message: 'Invalid Type'
+        });
+    }
+
 
     
 
@@ -36,6 +48,8 @@ router.post('/signup', (req, res, next) => {
                     _id: new mongoose.Types.ObjectId(),
                     fullName: fullName,
                     email: email,
+                    phoneNumber: phoneNumber,
+                    userType: type,
                     password: hash
                 });
 

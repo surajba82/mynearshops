@@ -11,6 +11,8 @@ const adminSchema = mongoose.Schema({
         unique: true,
         match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
+    phoneNumber: { type: String, unique: true },
+    userType: { type: String, required: true  }, /* superuser, admin */
     password: {
         type: String, required: true
     },
