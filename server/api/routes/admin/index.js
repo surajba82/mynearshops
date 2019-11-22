@@ -22,7 +22,7 @@ router.post('/signup', (req, res, next) => {
     }
     if(type !== "superuser" && type !== "admin"){
         return res.status(300).json({
-            message: 'Invalid Type'
+            message: 'Invalid User Type'
         });
     }
 
@@ -115,7 +115,8 @@ router.post('/login', (req, res, next) => {
                             data: {
                                 token: token,
                                 userId: admin._id,
-                                email: admin.email
+                                email: admin.email,
+                                type: admin.userType
                             }
                         });
                     }
@@ -130,6 +131,23 @@ router.post('/login', (req, res, next) => {
 
 
    })
+});
+
+router.get('/', (req, res, next) => {
+
+    Admin.find({})
+    .exec()
+    .then(admins => {
+        res.status(200).json({
+            message: admins
+        })
+    })
+    .catch(error => {
+        res.status(500).json({
+            message: error
+        })
+    })
+
 });
 
 module.exports = router;
