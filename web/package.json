@@ -16,7 +16,8 @@
     "redux": "^4.0.4",
     "redux-subspace": "^6.1.0",
     "redux-thunk": "^2.3.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "worker-loader": "^2.0.0"
   },
   "scripts": {
     "start": "set PORT=8001 && react-scripts start && npm run css-watch",
