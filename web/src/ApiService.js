@@ -152,7 +152,7 @@ class ApiService {
 
   fetchStores() {
     // const url = `/store/${this._params.brand}/dashboard/salescatalogs`;
-    const url = `/stores`;
+    const url = `/store`;
     return this.userInstance.get(url);
   }
 

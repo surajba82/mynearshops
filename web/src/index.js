@@ -7,8 +7,8 @@ let props = {};
 if (process.env.NODE_ENV === 'development') {
   props = {
     brand: 'testbrand',
-    feapiurl: `http://${window.location.hostname}:8002/api`,
-    beapiurl: `http://${window.location.hostname}:8002/admin`,
+    feapiurl: `http://${window.location.hostname}:8005/api`,
+    beapiurl: `http://${window.location.hostname}:8005/admin`,
     userid: 'testuser',
   }
 }

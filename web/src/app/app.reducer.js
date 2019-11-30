@@ -1,9 +1,6 @@
 import { combineReducers } from 'redux';
+import {data} from '../data/data.reducer';
 import home from '../scenes/Home/home.reducer';
-// import createhost from '../scenes/CreateHost/createhost.reducer';
-// import hostdetail from '../scenes/HostDetail/hostdetail.reducer';
-// import registeruser from '../scenes/RegisterUser/registeruser.reducer';
-// import data from '../data/data.reducer';
 
 const initialState = {
   
@@ -20,9 +17,6 @@ export function app(state = initialState, action) {
 
 export default combineReducers({
   app,
+  data,
   home,
-//   createhost,
-//   hostdetail,
-//   registeruser,
-//   data,
 });

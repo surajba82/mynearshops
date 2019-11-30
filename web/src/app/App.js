@@ -44,8 +44,6 @@ export const store = createStore(
 class App extends Component {
   constructor(props) {
     super(props);
-
-    console.log(props);
   }
 
   componentDidMount() {
@@ -62,7 +60,7 @@ class App extends Component {
     });
 
     if (process.env.SERVER && process.env.SERVER === 'mock') {
-      const mockPort = 8002;
+      const mockPort = 8005;
       const mockUrl = `http://${window.location.hostname}:${mockPort}`;
       const mockHost = window.location.hostname;
       this.apiService.setParams({
@@ -89,7 +87,7 @@ class App extends Component {
                   render={main}
                 />
               ))}
-            <Redirect to={`/${HOME}`} />
+            <Redirect to={`/`} />
           </Switch>
         </Router>
       </Provider>

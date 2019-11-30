@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { connect } from 'react-redux';
 import {fetchStores, clearAppData} from '../../app/app.actions';
-import SearchStores from './SearchStores/SearchStores';
+import Search from './SearchStores';
 import Featured from "./Featured/Featured";
 import Offers from "./Offers/Offers";
 
@@ -17,7 +17,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <SearchStores />
+        <Search />
         <Featured />
         <Offers />
       </div>

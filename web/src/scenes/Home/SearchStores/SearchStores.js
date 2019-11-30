@@ -1,23 +1,122 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-/** @jsx jsx */ import { jsx } from '@emotion/core';
- 
-const SearchStores = (props) => {
+import React, { Component } from 'react';
+import Autosuggest from 'react-autosuggest';
+
+const getSuggestionValue = ({storeName}) => storeName;
+const renderSuggestion = ({storeName, postalCode}) => {
   return (
-    <div className="columns is-centered">
-        <div className="column is-half">
-        <form>
-            <div className="field" css={{position: 'relative'}}>
-            <div className="control" css={{display: 'flex'}}>
-                <input type="text" className="input " placeholder="Search shops by name, city or postcode" />
-                <button type='submit' className="button is-primary "><FontAwesomeIcon icon='search' /></button>
-                <a class="button is-small" css={{position: 'absolute', top: '12px', right: '60px', fontSize: '0.75rem'}}><FontAwesomeIcon icon='location-arrow' /> Locate Me</a>
-            </div>
-            </div>
-        </form>
-        </div>
+    <div
+      name='uploadSearchOption'
+      data-test='uploadSearchOption'
+    >
+      <span>{storeName}</span> &nbsp; <span>{postalCode}</span>
+      
     </div>
   )
 };
 
-export default SearchStores;
+const getSuggestionLabelFromValue = (_id, suggestions) => {
+  const suggestion = suggestions.find((item) => item._id === _id);
+
+  if (suggestion) {
+    return suggestion.name;
+  }
+  return '';
+};
+
+class SearchStores extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      stores: [],
+      results: [],
+      value: getSuggestionLabelFromValue(props.selectedValue, props.stores),
+      noResults: false
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.selectedValue === '' && prevProps.selectedValue !== '') {
+      this.onSuggestionsFetchRequested({
+        value: this.state.value,
+      })
+    }
+  }
+
+  filterUploads(value) {
+    const matchingUpload = (store, queryString) => {
+      return store.storeName.toLowerCase().indexOf(
+        queryString.trim().toLowerCase()
+      ) > -1;
+    }
+    return this.props.stores
+      .filter((store) => matchingUpload(store, value))
+      .map(({storeName, _id, postalCode}) => ({
+        storeName,
+        _id,
+        postalCode,
+      }))
+  }
+
+  onSuggestionsFetchRequested = ({value}) => {
+    const results = this.filterUploads(value);
+    this.setState({
+      results,
+      noResults: results.length === 0,
+    });
+  };
+
+  onSuggestionsClearRequested = () => {
+    this.setState({
+      results: [],
+      noResults: false
+    })
+  };
+
+  onChange = (e, { newValue }) => {
+    this.setState({
+      value: newValue,
+    });
+    if (this.props.selectedValue !== ''
+      && this.props.stores.find((store) => store._id === this.props.selectedValue).name !== newValue) {
+      this.props.selectValue('')
+    }
+  };
+
+  onSuggestionSelected = (e, {suggestion}) => {
+    e.preventDefault();
+    this.props.selectValue(suggestion._id)
+  }
+
+  render() {
+    const inputProps = {
+      placeholder: 'Search for stores by name, city or postcode',
+      value: this.state.value,
+      onChange: this.onChange,
+      name: 'storeSearch',
+      className: 'input'
+    };
+    const helper = this.state.noResults ? {
+      error: 'true',
+      helper: 'Could not find an Upload matching your search',
+    } : {};
+
+    return (
+        <div>
+            <Autosuggest
+                suggestions={this.state.results}
+                onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+                onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                onSuggestionSelected={this.onSuggestionSelected}
+                getSuggestionValue={getSuggestionValue}
+                inputProps={inputProps}
+                renderSuggestion={renderSuggestion}
+                focusInputOnSuggestionClick={false}
+            />
+        </div>
+    )
+  }
+
+}
+
+export {SearchStores};

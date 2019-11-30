@@ -42,6 +42,7 @@ router.post('/create', (req, res, next) => {
 
 
 router.get('/', (req, res, next) => {
+    console.log('hi');
     Stores.find({})
     .select('_id name address1 postcode storeUrl')
     .exec()
