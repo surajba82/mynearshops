@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const Store = require('../../models/store/storeSchema');
 const authenticate = require('../../middleware/authenticate');
 
-
 router.post('/create', (req, res, next) => {
 
     const {
@@ -22,26 +21,26 @@ router.post('/create', (req, res, next) => {
         createdBy
     } = req.body;
 
-    console.log(req.body);
-
     const store = new Store({
         _id: new mongoose.Types.ObjectId(),
-    storeName: storeName,
-    address: { 
-        locality: locality,
-        streetAddress: streetAddress,
-        cityDistrictTown: cityDistrictTown,
-        state: state,
-        landmark: landmark
-     },
-    country: country,
-    phoneNumbers: phoneNumbers,
-    postalCode: postalCode,
-    location: location,
-    storeUrl: `${storeName.toLocaleLowerCase().replace(" ","-")}`,
-    storePics: storePics,
-    createdBy: createdBy,
+        storeName: storeName,
+        address: { 
+            locality: locality,
+            streetAddress: streetAddress,
+            cityDistrictTown: cityDistrictTown,
+            state: state,
+            landmark: landmark
+        },
+        country: country,
+        phoneNumbers: phoneNumbers,
+        postalCode: postalCode,
+        location: location,
+        storeUrl: `${storeName.toLocaleLowerCase().replace(" ","-")}`,
+        storePics: storePics,
+        createdBy: createdBy,
     });
+
+    console.log(store);
 
     store.save()
     .then(store => {
@@ -49,7 +48,7 @@ router.post('/create', (req, res, next) => {
             message: "Store Created",
             data: {
                 _id: store._id,
-                storeUrl: `http://localhost:8002/${store.storeUrl}`
+                storeUrl: `${store.storeUrl}`
             }
         });
     })
@@ -63,8 +62,8 @@ router.post('/create', (req, res, next) => {
 
 
 router.get('/', (req, res, next) => {
-    Stores.find({})
-    .select('_id name address1 postcode storeUrl')
+    Store.find({})
+    .select('_id storeName address postalCode storeUrl')
     .exec()
     .then(stores => {
         res.status(200).json({
