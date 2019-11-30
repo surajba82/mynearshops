@@ -1,31 +1,29 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-/** @jsx jsx */ import { jsx } from '@emotion/core';
- 
+
 const Featured = (props) => {
   return (
-    <section class="section">
-            <div class="container">
-                <h1 class="title">Featured Stores</h1>
-                <div class="tile is-ancestor">
-                    <div class="tile is-parent">
-                        <article class="tile is-child box">
-                        <figure class="image is-4by3">
-                                <img src="https://bulma.io/images/placeholders/640x480.png" />
+    <section className="section">
+            <div className="container">
+                <h1 className="title">Featured Stores</h1>
+                <div className="tile is-ancestor">
+                    <div className="tile is-parent">
+                        <article className="tile is-child box">
+                        <figure className="image is-4by3">
+                                <img src="https://bulma.io/images/placeholders/640x480.png" alt="" />
                             </figure>
                         </article>
                     </div>
-                    <div class="tile is-parent">
-                        <article class="tile is-child box">
-                            <figure class="image is-4by3">
-                                <img src="https://bulma.io/images/placeholders/640x480.png" />
+                    <div className="tile is-parent">
+                        <article className="tile is-child box">
+                            <figure className="image is-4by3">
+                                <img src="https://bulma.io/images/placeholders/640x480.png" alt="" />
                             </figure>
                         </article>
                     </div>
-                    <div class="tile is-parent">
-                        <article class="tile is-child box">
-                            <figure class="image is-4by3">
-                                <img src="https://bulma.io/images/placeholders/640x480.png" />
+                    <div className="tile is-parent">
+                        <article className="tile is-child box">
+                            <figure className="image is-4by3">
+                                <img src="https://bulma.io/images/placeholders/640x480.png" alt="" />
                             </figure>
                         </article>
                     </div>

@@ -11,15 +11,15 @@ export const routes = {
     home: {
       path: "/",
       exact: true,
-      main: ({match}) => <Redirect to={`/${HOME}`}/>
+      main: ({match}) => <Redirect to={`/`}/>
     },
     home: {
-      path: `/${HOME}`,
+      path: `/`,
       exact: true,
       main: () => <Home />
     },
     moon: {
-      path: `/${STORE_MOON}`,
+      path: `/:id`,
       exact: true,
       main: () => <div>Moon</div>
     },
