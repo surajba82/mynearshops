@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
+/** @jsx jsx */ import { jsx } from '@emotion/core';
 
-const getSuggestionValue = ({storeName}) => storeName;
-const renderSuggestion = ({storeName, postalCode}) => {
+const getSuggestionValue = ({storeName, storeUrl, postalCode}) => {
+  console.log(postalCode, storeUrl);
+  return storeName;
+};
+const renderSuggestion = ({storeName, postalCode,address}) => {
   return (
     <div
-      name='uploadSearchOption'
-      data-test='uploadSearchOption'
+      data-test='searchOption'
+      css={{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}
     >
-      <span>{storeName}</span> &nbsp; <span>{postalCode}</span>
-      
+      <div>{storeName}</div> 
+      <div css={{fontSize: '10px'}}>at {address.landmark}, {address.cityDistrictTown}, {postalCode}</div>
     </div>
   )
 };
@@ -43,23 +52,25 @@ class SearchStores extends Component {
     }
   }
 
-  filterUploads(value) {
-    const matchingUpload = (store, queryString) => {
+  filterShops(value) {
+    const matchingShop = (store, queryString) => {
       return store.storeName.toLowerCase().indexOf(
         queryString.trim().toLowerCase()
       ) > -1;
     }
     return this.props.stores
-      .filter((store) => matchingUpload(store, value))
-      .map(({storeName, _id, postalCode}) => ({
-        storeName,
+      .filter((store) => matchingShop(store, value))
+      .map(({_id, storeName, storeUrl, postalCode, address}) => ({
         _id,
+        storeName,
+        storeUrl,
         postalCode,
+        address,
       }))
   }
 
   onSuggestionsFetchRequested = ({value}) => {
-    const results = this.filterUploads(value);
+    const results = this.filterShops(value);
     this.setState({
       results,
       noResults: results.length === 0,
@@ -79,13 +90,13 @@ class SearchStores extends Component {
     });
     if (this.props.selectedValue !== ''
       && this.props.stores.find((store) => store._id === this.props.selectedValue).name !== newValue) {
-      this.props.selectValue('')
+      this.props.selectValue('');
     }
   };
 
   onSuggestionSelected = (e, {suggestion}) => {
     e.preventDefault();
-    this.props.selectValue(suggestion._id)
+    this.props.selectValue(suggestion)
   }
 
   render() {
@@ -96,10 +107,6 @@ class SearchStores extends Component {
       name: 'storeSearch',
       className: 'input'
     };
-    const helper = this.state.noResults ? {
-      error: 'true',
-      helper: 'Could not find an Upload matching your search',
-    } : {};
 
     return (
         <div>
@@ -113,6 +120,18 @@ class SearchStores extends Component {
                 renderSuggestion={renderSuggestion}
                 focusInputOnSuggestionClick={false}
             />
+            {
+              this.state.noResults &&
+                <div 
+                  className="no-suggestions" 
+                  css={{
+                    backgroundColor: '#fa4a5b',
+                    padding: '10px',
+                    color: '#fff'
+                  }}>
+                  Could not find an Shop matching your search
+                </div>
+            }
         </div>
     )
   }

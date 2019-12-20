@@ -15,9 +15,11 @@ router.post('/create', (req, res, next) => {
         landmark,
         country,
         phoneNumbers, // Array
+        emails, // Array
         postalCode,
         location, //object with prop latitude and longitude
         storePics, //Array of images
+        storeUrl,
         createdBy
     } = req.body;
 
@@ -33,14 +35,13 @@ router.post('/create', (req, res, next) => {
         },
         country: country,
         phoneNumbers: phoneNumbers,
+        emails: emails,
         postalCode: postalCode,
         location: location,
-        storeUrl: `${storeName.toLocaleLowerCase().replace(" ","-")}`,
+        storeUrl: storeUrl,
         storePics: storePics,
         createdBy: createdBy,
     });
-
-    console.log(store);
 
     store.save()
     .then(store => {

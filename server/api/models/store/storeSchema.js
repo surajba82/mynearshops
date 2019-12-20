@@ -12,7 +12,12 @@ const storesSchema = mongoose.Schema({
     country: {type: String, required: true},
     phoneNumbers: [
         { 
-            number: {type: Number, required: true, unique: true}
+            number: {type: String, required: true, unique: true}
+        }
+    ],
+    emails: [
+        { 
+            email: {type: String, required: true, unique: true}
         }
     ],
     postalCode: { type: String, required: true },

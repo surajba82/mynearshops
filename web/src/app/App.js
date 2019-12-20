@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import {
   BrowserRouter as Router,
   Redirect,
@@ -7,8 +6,6 @@ import {
   Switch,
 } from 'react-router-dom';
 import ApiService from '../ApiService';
-import {HOME} from './app.config';
-import { connect } from 'react-redux';
 import { Provider } from 'react-redux';
 import { createStore, compose } from 'redux';
 import {applyMiddleware} from 'redux-subspace';
@@ -18,14 +15,16 @@ import {routes} from './app.routes';
 import Header from '../components/Header';
 import '../App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSearch, faShoppingCart, faLocationArrow, faDolly } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faShoppingCart, faLocationArrow, faDolly, faAngleDown, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 /** @jsx jsx */ import { jsx, CX } from '@emotion/core';
  
 library.add(
-  faSearch, 
+  faSearch,
+  faMapMarkerAlt,
   faShoppingCart, 
   faLocationArrow, 
-  faDolly
+  faDolly,
+  faAngleDown
 );
 
 
@@ -74,7 +73,6 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Header />
-        <br />
         <Router>
           <Switch>
             {routes.all
