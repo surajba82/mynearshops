@@ -28,14 +28,7 @@ class Home extends Component {
 export {Home};
 
 const mapStateToProps = (state) => {
-  // const {uploads: {ui}, data} = state;
-  // return {
-  //   loading: ui.loading,
-  //   loadingText: ui.loadingText,
-  //   activePage: ui.activePage,
-  //   uploadType: ui.uploadList.type,
-  //   hasSalesCatalogs: (data.salesCatalogs.all.length ? true : false),
-  // }
+  
 
   console.log(state);
 

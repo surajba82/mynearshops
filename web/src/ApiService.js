@@ -151,36 +151,14 @@ class ApiService {
   }
 
   fetchStores() {
-    // const url = `/store/${this._params.brand}/dashboard/salescatalogs`;
     const url = `/store`;
     return this.userInstance.get(url);
   }
 
-  fetchSalesCatalogs() {
-    // const url = `/store/${this._params.brand}/dashboard/salescatalogs`;
-    const url = `/${this._params.brand}/salescatalog`;
+  fetchShopDetail() {
+    const url = `/${this._params.brand}/shopdetail`;
     return this.userInstance.get(url);
   }
-
-  fetchUserProfileData() {
-    const url = `/userprofile`;
-
-    return this.userInstance.get(url);
-  }
-
-  fetchBrands() {
-    const url = `/brand`;
-
-    return this.userInstance.get(url);
-  }
-
-  
-
-
-
-
-
-
 
 }
 
