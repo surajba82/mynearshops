@@ -16,6 +16,13 @@
 @import '../node_modules/bulma/sass/layout/section.sass';
 
 // Custom styles
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.carousel .slider {
+    height: 260px;
+}
 @import './sass/autosuggest.scss';
 @import './sass/navbar.scss';
  

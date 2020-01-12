@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
 /** @jsx jsx */ import { jsx } from '@emotion/core';
 
-const getSuggestionValue = ({storeName, storeUrl, postalCode}) => {
-  console.log(postalCode, storeUrl);
-  return storeName;
+const getSuggestionValue = ({name}) => {
+  return name;
 };
-const renderSuggestion = ({storeName, postalCode,address}) => {
+const renderSuggestion = ({name, imageUrl, price, quantity, offer}) => {
   return (
     <div
       data-test='searchOption'
@@ -14,12 +13,26 @@ const renderSuggestion = ({storeName, postalCode,address}) => {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        borderBottom: '1px solid rgba(0,0,0,0.1)',
       }}
     >
-      <div>{storeName}</div> 
-      <div css={{fontSize: '10px'}}>at {address.landmark}, {address.cityDistrictTown}, {postalCode}</div>
+      <div css={{display: 'flex', marginRight: '10px'}}><img src={imageUrl} width='50' css={{border:'1px solid rgba(0,0,0,0.5)'}} /></div>
+      <div css={{display: 'flex', flex: '1'}}>{name} <br />{quantity}</div>
+      {offer ? <div css={{
+        display: 'flex', 
+        marginRight: '10px', 
+        backgroundColor: '#d43030', 
+        color: 'white',
+        padding: '4px 8px',
+        fontSize: '12px',
+        borderRadius: '4px'
+        
+        }}>{offer}</div>: ''}
+      <div>
+        <span css={{fontSize:'22px', fontWeight: 'bold', marginRight: '10px'}}>{price}</span>
+        <button class="button is-small is-primary">Add</button>
+      </div>
     </div>
   )
 };
@@ -33,14 +46,14 @@ const getSuggestionLabelFromValue = (_id, suggestions) => {
   return '';
 };
 
-class SearchStores extends Component {
+class SearchProducts extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       stores: [],
       results: [],
-      value: getSuggestionLabelFromValue(props.selectedValue, props.stores),
+      value: getSuggestionLabelFromValue(props.selectedValue, props.products),
       noResults: false
     }
   }
@@ -54,20 +67,21 @@ class SearchStores extends Component {
   }
 
   filterShops(value) {
-    const matchingShop = (store, queryString) => {
-      return store.storeName.toLowerCase().indexOf(
+    const matchingShop = (product, queryString) => {
+      return product.name.toLowerCase().indexOf(
         queryString.trim().toLowerCase()
       ) > -1;
     }
-    return this.props.stores
-      .filter((store) => matchingShop(store, value))
-      .map(({_id, storeName, storeUrl, postalCode, address}) => ({
-        _id,
-        storeName,
-        storeUrl,
-        postalCode,
-        address,
-      }))
+    return this.props.products
+      .filter((product) => matchingShop(product, value))
+      // .map(({_id, name, imageUrl, price, quantity}) => ({
+      //   _id,
+      //   name,
+      //   imageUrl,
+      //   price,
+      //   quantity,
+      //   offer      
+      // }))
   }
 
   onSuggestionsFetchRequested = ({value}) => {
@@ -90,7 +104,7 @@ class SearchStores extends Component {
       value: newValue,
     });
     if (this.props.selectedValue !== ''
-      && this.props.stores.find((store) => store._id === this.props.selectedValue).name !== newValue) {
+      && this.props.products.find((store) => store._id === this.props.selectedValue).name !== newValue) {
       this.props.selectValue('');
     }
   };
@@ -102,7 +116,7 @@ class SearchStores extends Component {
 
   render() {
     const inputProps = {
-      placeholder: 'Search for stores by name, city or postcode',
+      placeholder: 'Search for products',
       value: this.state.value,
       onChange: this.onChange,
       name: 'storeSearch',
@@ -130,7 +144,7 @@ class SearchStores extends Component {
                     padding: '10px',
                     color: '#fff'
                   }}>
-                  Could not find an Shop matching your search
+                  Could not find an Product matching your search
                 </div>
             }
         </div>
@@ -139,4 +153,4 @@ class SearchStores extends Component {
 
 }
 
-export {SearchStores};
+export {SearchProducts};

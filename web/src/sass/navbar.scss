@@ -1,209 +1,125 @@
-body {overflow-x: hidden;}
-.navContainer{
-  width: 100%;
-  max-width: 117rem;
-  background: #e3e3e3;
-  padding: 5px 10px;
+  
 
-  nav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-    .menu-icons {
-      color: orangered;
-      font-size: 2rem;
-      position: absolute;
-      top: 50%;
-      right: 0.5rem;
-      transform: translateY(-50%);
-      cursor: pointer;
-      z-index: 1500;
-      display: none;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 5rem;
-    }
-
-    .nav-list {
-      display: flex;
+    nav {
       width: 100%;
+      background: #f6f6f6;
+      font-size: 16px;
+    }
+    
+    /* first stage */
+    
+    nav > ul {
+      position: relative;
+      display: flex;
+      justify-content: left;
+      margin: 0 auto;
+      padding: 0;
+      flex-direction: row;
       align-items: center;
+    }
+    
+    nav a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+    }
+    
+    nav ul li {
+      color: #fff;
+      list-style: none;
+      transition: 0.5s;
+    }
+    
+    nav > ul > li > a {
+      padding: 10px 14px;
+      border-left: 1px solid rgba(0, 0, 0, 0.2);
+      color: black;
+      font-weight: bold;
+      font-size: 14px;
+      display: flex;
 
-      li {
-        position: relative;
-
-        &.move-right {
-          margin: auto 0 auto auto;
-          line-height: initial;
-        }
-
-        &:hover > .sub-menu {
-          top: 3rem;
-          opacity: 1;
-          visibility: visible;
-        }
+      span {
+        margin-right: 4px;
       }
 
-      a {
-        display: block;
-        color: #000;
-        padding: 0 1.5rem;
-        font-size: 16px;
-
-        &:hover {
-          color: #f30
-        }
+      .badge {
+        background-color: red;
+        color: #fff;
       }
 
-      .btn {
-        padding: 1.3rem;
-        display: inline-block;
-        background-color: orangered;
-        border: 2px solid orangered;
-        border-radius: 5rem;
-        transition: background-color 650ms;
-
-        &:hover {
-          color: orangered;
-          background-color: rgba(0,0,0,0.2);
-        }
+      svg {
+        transform: rotate(180deg);
+        margin-top: 3px;
       }
 
-      .sub-menu{
-        width: 14rem;
-        display: block;
-        position: absolute;
-        border-top: 2px solid orangered;
-        border-left: 1px solid rgba(0,0,0,0.1);
-        border-right: 1px solid rgba(0,0,0,0.1);
-        background-color: #ffffff;
-        z-index: 100;
-        top: 2rem;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 650ms ease;
-
-        a {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          flex-flow: row wrap;
-          color: #000;
-          padding: 0 0.5rem;
-          font-size: 14px;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-          &:hover {
-            background-color: rgba(0,0,0,0.025);
-          }
+      &:hover{
+        svg {
+          transition: transform .5s ease-in-out;
+          transform: rotate(0deg);
         }
-
-        &::before {
-          content:"";
-          position: absolute;
-          top: -1.1rem;
-          left: 3rem;
-          border: 0.5rem solid transparent;
-          border-bottom-color: orangered;
-        }
-
-        .sub-menu {            
-          &::before{
-            top: 0.7rem;
-            left: -1.1rem;
-            border: .5rem solid transparent;
-            border-right-color: orangered;
-          }
-
-          border-top: 1px solid rgba(0,0,0,0.1);
-          border-left: 2px solid orangered;
-          top: 0;
-          left: 120%
-        }
-        
-        li {
-          line-height: 2.5rem;
-
-          &:hover > .sub-menu {
-            top: 0;
-            left: 100%
-          }
-        }
-      }
-    }      
-  }
-}
-  
-@media screen and (max-width: 1023px){
-    .navContainer{  
-      nav {        
-        &.active {
-          .menu-icons {
-            .ion-md-close {
-              display: block;
-            }
-  
-            .ion-md-menu {
-              display: none;
-            }
-          }                        
-
-          .nav-list {
-            display: flex;
-          }
-        }
-        
-        .menu-icons {
-          display: block;
-
-          .ion-md-close {
-            display: none
-          }
-        }
-  
-        .nav-list {
-          position: fixed;
-          top: 46px;
-          left: 0;
-          height: 100vh;
-          flex-direction: column;
-          align-items: initial;
-          background-color: #e3e3e3;
-          z-index: 1000;
-          display: none;
-         
-          li {
-            &.move-right {
-              margin: 0 auto 0 0;
-              line-height: initial;
-            }
-            
-            &:hover > .sub-menu{
-              opacity: 1;
-              visibility: visible;
-              max-height: initial;
-            }
-          }
-        
-          .sub-menu {
-            position: initial;
-            border: 2px solid transparent;
-            border-left-color: orangered;
-            margin-left: 1rem;
-            max-height: 0;
-        
-            &::before {
-              display: none;
-            }
-          }     
-        }
-        }      
       }
     }
 
+    nav > ul > li:active {
+      background-color: #ccc;
+      font-weight: bold;
+    }
+    
+    nav ul > li.submenu > a:after {
+      position: relative;
+      float: right;
+      content: '';
+      margin-left: 10px;
+      margin-top: 8px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #fff;
+      border-bottom: 5px solid transparent;
+    }
+    
+    nav ul > li.submenu:hover > a:after {
+      margin-top: 2px;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid #fff;
+    }
+    
+    nav > ul > li:hover {
+      background: #ffffff;
+    }
+    
+    /* second stage (the mega-menu) */
+    
+    nav ul.megamenu {
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap; 
+      width: 100%;
+      top: -9999px;
+      left: 0;
+      background: #fff;
+      text-align: left;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+
+    nav ul.megamenu > ul {
+      width: 18%;
+      
+    }
+
+    nav ul.megamenu ul li a {
+      border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+      padding: 4px;
+      white-space: nowrap;
+      margin: 0 4px;
+      font-size: 14px;
+    }
+
+    nav ul.megamenu ul li:hover > ul {
+      display: block;
+    }
+    
+    nav ul li:hover ul.megamenu {
+      top: 100%;
+    }

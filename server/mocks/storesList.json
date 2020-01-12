@@ -1,0 +1,69 @@
+{
+	"data": [{
+		"address": {
+			"locality": "",
+			"cityDistrictTown": "Harrow",
+			"state": "Middlesex",
+			"landmark": "Kenton road"
+		},
+		"_id": "5df01c796d88954d9050887b",
+		"storeName": "Pick N Save",
+		"postalCode": "HA3 8BX",
+		"storeUrl": "pns"
+	}, {
+		"address": {
+			"locality": "",
+			"cityDistrictTown": "Southall",
+			"state": "Middlesex",
+			"landmark": "South road"
+		},
+		"_id": "5df01de36d88954d9050887e",
+		"storeName": "Quality Foods Southall",
+		"postalCode": "UB1 1SQ",
+		"storeUrl": "qualityfoods-southall"
+	}, {
+		"address": {
+			"locality": "",
+			"cityDistrictTown": "Southall",
+			"state": "Middlesex",
+			"landmark": "Hounslow road"
+		},
+		"_id": "5df01e196d88954d90508881",
+		"storeName": "Quality Foods Hounslow",
+		"postalCode": "TW3 3LZ",
+		"storeUrl": "qualityfoods-hounslow"
+	}, {
+		"address": {
+			"locality": "",
+			"cityDistrictTown": "Hayes",
+			"state": "Middlesex",
+			"landmark": "Uxbridge road"
+		},
+		"_id": "5df01e656d88954d90508884",
+		"storeName": "Quality Foods Hayes",
+		"postalCode": "UB4 0JN",
+		"storeUrl": "qualityfoods-hayes"
+	}, {
+		"address": {
+			"locality": "",
+			"cityDistrictTown": "Harrow",
+			"state": "Middlesex",
+			"landmark": "Alexandra Ave"
+		},
+		"_id": "5df01ef86d88954d90508887",
+		"storeName": "Taj Stores International",
+		"postalCode": "HA2 9SE",
+		"storeUrl": "tajstores"
+	}, {
+		"address": {
+			"locality": "",
+			"cityDistrictTown": "Harrow",
+			"state": "Middlesex",
+			"landmark": "Pinner Road"
+		},
+		"_id": "5df01f6d6d88954d9050888a",
+		"storeName": "VB & Sons",
+		"postalCode": "HA2 6EQ",
+		"storeUrl": "vb"
+	}]
+}

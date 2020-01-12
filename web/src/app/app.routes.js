@@ -1,7 +1,7 @@
 import {Redirect} from 'react-router-dom';
 import React from 'react';
 import Home from '../scenes/Home';
-import Shop from '../scenes/Shop';
+import Shop from '../scenes/Shop/Shop';
 import {
   HOME,
   STORE_MOON,

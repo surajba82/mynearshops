@@ -89,7 +89,7 @@ class Navbar extends React.Component {
                 <i className='icon ion-md-close' onClick={this.toggleMenu}></i>
               </div>
               <a className='logo'>
-                <img src='/images/pns.jpg' width='100' />
+                <img src='../images/pns.jpg' width='100' />
               </a>
               <ul className='nav-list'>
                 {items}

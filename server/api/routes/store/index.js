@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Store = require('../../models/store/storeSchema');
 const authenticate = require('../../middleware/authenticate');
+const storesList = require('../../../mocks/storesList.json');
 
 router.post('/create', (req, res, next) => {
 
@@ -63,19 +64,23 @@ router.post('/create', (req, res, next) => {
 
 
 router.get('/', (req, res, next) => {
-    Store.find({})
-    .select('_id storeName address postalCode storeUrl')
-    .exec()
-    .then(stores => {
-        res.status(200).json({
-            data: stores
-        });
-    })
-    .catch(er => {
-        res.status(500).json({
-            error: er
-        });
-    })
+    // Store.find({})
+    // .select('_id storeName address postalCode storeUrl')
+    // .exec()
+    // .then(stores => {
+    //     res.status(200).json({
+    //         data: stores
+    //     });
+    // })
+    // .catch(er => {
+    //     res.status(500).json({
+    //         error: er
+    //     });
+    // })
+    // const data = {
+    //     data: storesList
+    // };
+    res.send(JSON.stringify(storesList))
 });
 
 

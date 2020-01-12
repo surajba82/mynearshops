@@ -1,65 +1,51 @@
 import React from 'react';
+import {IconChevronRight, IconChevronTop} from './Icons';
 /** @jsx jsx */ import { jsx } from '@emotion/core';
-
-const Menulist = ({child}) => {
-    {child.map(item => {
-        if (item.dive) {
-        return (
-            <React.Fragment>
-            <li class="submenu">
-                <a href="#" title={item.name}>{item.name}</a>
-            </li>
-            <ul class="megamenu">
-            <ul>
-            
-            </ul>
-            </ul>
-            </React.Fragment>
-        ); 
-        }
-        else if (!item.dive) {
-        return (
-            <li name={item.name}><a>{item.name}</a></li>
-        ); 
-        }
-        return null;
-    })}
-}
-
-const SimpleList = ({list}) => (
-    <ul>
-      {list.map(item => (
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
-  );
 
   const NavList = ({list}) => {
     let hasMenu = false;
     
     return (
-        <ul>
-        {list.map(item => (
-            <li key={item.name}>
-                <a>{item.name}</a>
-                {item.dive && <ul className='megamenu'><SubList list={item.subNav} /></ul>}
-            </li>
-        ))}
-        </ul>
+      <ul>
+      {list.map(item => (
+          <li key={item.id}>
+            <a><span key={item.name}>{item.name}</span> <IconChevronTop /></a>
+            {item.subNav && <ul className='megamenu'><SubList list={item.subNav} /></ul>}
+          </li>
+      ))}
+      <li><a><span className='badge'>OFFERS</span></a></li>
+      </ul>
     )
   };
 
   const SubList = ({list}) => {
-    let hasChild = false;
     return (
-        <ul css={{position: 'relative'}}>
-        {list.map(item => (
-            <li key={item.name}>
-                <a>{item.name}</a>
-                {item.dive && <SubList list={item.subNav} />}
-            </li>
+      <React.Fragment>
+        {list.map((item, index) => (
+            <React.Fragment>
+              <div key={index} css={{
+                display: 'flex',
+                flexDirection: 'column',
+                margin: '10px',
+                width: '20%',
+              }}>
+                <div css={{
+                  color: 'black',
+                  padding: '5px 10px',
+                  textTransform: 'uppercase',
+                  borderBottom: '1px solid rgba(0,0,0,0.1)',
+                  fontWeight: 'bold'
+                }}>{item.name}</div>
+                <ul>
+                  {item.items.map(k => (
+                  <li key={k}><a>{k}</a></li>
+                  ))}
+                </ul>
+            </div>
+            
+            </React.Fragment>
         ))}
-        </ul>
+        </React.Fragment>
     )
   };
 

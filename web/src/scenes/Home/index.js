@@ -19,7 +19,6 @@ class Home extends Component {
       <div>
         <Search />
         <Featured />
-        <Offers />
       </div>
     )
   }

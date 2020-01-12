@@ -1,464 +1,316 @@
 {
 	"storeId": "7457368945",
 	"storeName": "Moon Cash & Carry",
-	"navTree": [{
-		"name": "Groceries",
-		"id": "34343",
-		"dive": true,
+	"products": [{
+		"_id": "785646",
+		"name": "Semi Skimmed Milk",
+		"quantity": "2l",
+		"price": "£1.60",
+		"offer": "2 for £3",
+		"tags": ["milk"],
+		"superDept": "Chilled Foods",
+		"department": "milk, egg, butter and cream",
+		"inStock": true,
+		"imageUrl": "images/products/semimilk.jpg"
+	},
+	{
+		"_id": "785647",
+		"name": "Whole Milk",
+		"quantity": "4l",
+		"price": "£2.60",
+		"tags": ["milk"],
+		"inStock": true,
+		"rollBack": true,
+		"oldPrice": "3£",
+		"superDept": "Chilled Foods",
+		"department": "milk, egg, butter and cream",
+		"imageUrl": "images/products/wholemilk.jpg"
+	}],
+	"navTree":  [{
+		"id": "77718",
+		"name": "GROCERIES",
 		"subNav": [{
-			"id": "34343",
-			"name": "Chilled Food",
-			"dive": true,
-			"subNav": [{
-				"id": "34343",
-				"name": "Milk, Butter, Cream & Eggs",
-				"dive": true,
-				"subNav": [{
-					"id": "34343",
-					"name": "Milk",
-					"dive": true,
-					"subNav": [{
-							"id": "34343",
-							"name": "Whole Milk",
-							"dive": false
-						},
-						{
-							"id": "34343",
-							"name": "Semi Skimmed Milk",
-							"dive": false
-						}
-					]
-				}, {
-					"id": "34343",
-					"name": "Butter",
-					"dive": true,
-					"subNav": [{
-							"id": "34343",
-							"name": "Salted",
-							"dive": false
-						},
-						{
-							"id": "46465",
-							"name": "Unsalted",
-							"dive": false
-						}
-					]
-				}, {
-					"id": "34343",
-					"name": "Cream",
-					"dive": true,
-					"subNav": [{
-							"id": "34343",
-							"name": "Single",
-							"dive": false
-						},
-						{
-							"id": "34343",
-							"name": "Double",
-							"dive": false
-						}
-					]
-				}, {
-					"id": "34343",
-					"name": "Eggs",
-					"dive": true,
-					"subNav": [{
-							"id": "34343",
-							"name": "Brown",
-							"dive": false
-						},
-						{
-							"id": "3434",
-							"name": "White",
-							"dive": false
-						}
-					]
-				}]
-			}]
+			"name": "FRUIT & VEGETABLE",
+			"items": ["General Veg", "Leafy Veg", "Fresh Fruits"]
 		}, {
-			"id": "1",
-			"name": "Fresh Fruits & Vegatables",
-			"dive": true,
-			"subNav": [{
-					"id": "4323",
-					"name": "Fruits",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "Oranges",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "Apples",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "Banana",
-						"dive": false
-					}]
-				},
-				{
-					"id": "4323",
-					"name": "Vegetables",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "Okra",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "Apples",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "Banana",
-						"dive": false
-					}]
-				}
-			]
+			"name": "MEAT",
+			"items": ["Chicken", "Lamb", "Beef", "Pork", "Mutton", "Halal Chicken & Lamb"]
 		}, {
-			"id": "2",
-			"dive": true,
-			"name": "Drinks",
-			"subNav": [{
-				"id": "4323",
-				"name": "A",
-				"dive": true,
-				"subNav": [{
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}, {
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}]
-			}, {
-				"id": "4323",
-				"name": "B",
-				"dive": true,
-				"subNav": [{
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}, {
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}]
-			}]
+			"name": "FISH & SEAFOOD",
+			"items": ["Frozen Fish", "Frozen Shrimps & Prawns"]
 		}, {
-			"id": "3",
-			"dive": true,
-			"name": "Chilled Food",
-			"subNav": [{
-				"id": "4323",
-				"name": "A",
-				"dive": true,
-				"subNav": [{
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}, {
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}]
-			}, {
-				"id": "4323",
-				"name": "B",
-				"dive": true,
-				"subNav": [{
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}, {
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}]
-			}]
+			"name": "DRIED",
+			"items": ["Wadis & Soya Chunks", "Nuts and Seeds", "Dried Vegetables", "Dried Fruit", "Dry Red Chillies", "Seed & Nut Spreads", "Nut Sprinkles"]
 		}, {
-			"id": "4",
-			"dive": true,
-			"name": "Laundry & Household",
-			"subNav": [{
-				"id": "4323",
-				"name": "A",
-				"dive": true,
-				"subNav": [{
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}, {
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}]
-			}, {
-				"id": "4323",
-				"name": "B",
-				"dive": true,
-				"subNav": [{
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}, {
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}]
-			}]
+			"name": "BREAD, PAPADS...",
+			"items": ["Paratha", "Papads", "Papidis", "Farfars", "Naan, Roti & Chappatti's", "Spring Rolls", "Samosas, Patra and Kachori"]
 		}, {
-			"id": "4323",
-			"dive": true,
-			"name": "Food Cupboard",
-			"subNav": [{
-				"id": "4323",
-				"name": "A",
-				"dive": true,
-				"subNav": [{
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}, {
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}]
-			}, {
-				"id": "4323",
-				"name": "B",
-				"dive": true,
-				"subNav": [{
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}, {
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}]
-			}]
-		}, {
-			"id": "5",
-			"dive": true,
-			"name": "Baby Toddler & Kids",
-			"subNav": [{
-				"id": "4323",
-				"name": "A",
-				"dive": true,
-				"subNav": [{
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}, {
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}]
-			}, {
-				"id": "4323",
-				"name": "B",
-				"dive": true,
-				"subNav": [{
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}, {
-					"id": "4323",
-					"name": "A1",
-					"dive": true,
-					"subNav": [{
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}, {
-						"id": "4323",
-						"name": "A2",
-						"dive": false
-					}]
-				}]
-			}]
+			"name": "INSTANT MIXES",
+			"items": ["Dosa & Idli", "Upma", "Dhokla", "Uttapam", "Bhaji & Pakora", "Panipuri & Golgappa", "Baking & Custard Powder"]
 		}]
 	}, {
-		"id": "454354",
-		"name": "Special Offers",
-		"dive": false
+		"id": "74058",
+		"name": "SPICES",
+		"subNav": [{
+			"name": "Ground Spices",
+			"items": [
+				"Amchoor Powder",
+				"Chilli Powder",
+				"Turmeric Powder",
+				"Coriander Powder",
+				"Jeera Powder",
+				"Pepper Powder",
+				"Ginger & Garlic Powder",
+				"Cardomoms & Cloves Powder",
+				"Cinnamon Powder",
+				"Garam Masala",
+				"Hing Powder",
+				"Fennel Powder",
+				"Paprika Powder",
+				"Methi Powder",
+				"Nutmeg Powder",
+				"Mace Powder",
+				"Other Powders",
+				"JEERA POWDER"
+			]
+		}, {
+			"name": "Whole Spices & Seeds",
+			"items": [
+				"Saffron",
+                "Cumin Seeds (Jeera)",
+                "Dry Red Chillies",
+                "Mustard Seeds",
+                "Coriander Seeds (Dhania)",
+                "Cardomoms & Cloves",
+                "Pepper",
+                "Cinnamon (Dalchini)",
+                "Nutmeg",
+                "Mace / Javantri",
+                "Methi Seeds",
+                "Ajwain Seeds",
+                "Fennel Seeds",
+                "Poppy Seeds",
+                "Till Seeds",
+                "Whole Garam Masala",
+                "Kaloonji Seeds"
+			]
+		}, {
+			"name": "HERBS",
+			"items": [
+				"Kasoori Methi",
+                "Coriander",
+                "Mint",
+                "Curry Leaves",
+                "Bay Leaves",
+                "Oregano",
+                "Marjoram",
+                "Chives",
+                "Thyme",
+                "Sage",
+                "Parsley",
+                "Rosemary",
+                "Basil",
+                "Dill Weed",
+                "Other Herbs"
+			]
+		}]
 	}, {
-		"id": "859",
-		"name": "Rollback",
-		"dive": false
+		"id": "05030",
+		"name": "DRINKS, DAIRY & CUPBOARD",
+        "subNav": [{
+			"name": "DRINKS & DAIRY",
+			"items": [
+				"Paneer",
+                "Cheese",
+                "Wine",
+                "Beers",
+                "Soft Drinks"
+			]
+        }, {
+			"name": "CUPBOARD",
+			"items": [
+				"Vinegars",
+                "Coconut Products",
+                "Honey",
+                "Salt, Sugar & Jaggery",
+                "Canned Products",
+                "Tea & Coffee",
+                "Soonf & After Meals",
+                "Milk Powders",
+                "Sprinkler's",
+                "Vinegars, Pastes and Cooking Sauces"
+			]
+        }]
+	}, {
+		"id": "08767",
+		"name": "PICKLES & SAUCES",
+        "subNav": [{
+			"name": "PICKLES & CHUTNEYS",
+			"items": [
+				"Mango Pickles",
+                "Tomato Pickles",
+                "Gongura Pickles",
+                "Tamarind Pickles",
+                "Amla Pickles",
+                "Lime Pickles",
+                "Chilli Pickles",
+                "Garlic Pickles",
+                "Ginger Pickles",
+                "Onion Pickles",
+                "Carrot Pickles",
+                "Drumstick Pickles",
+                "Mixed Pickles",
+                "Other Pickles"
+			]
+        }, {
+			"name": "Curries & Sauces",
+			"items": [
+				"PASTES & SAUCES",
+                "Vinegars, Pastes and Cooking Sauces",
+                "Curry Pastes",
+                "Curry Sauces",
+                "Marinades & Table Sauces",
+                "Tamarind Slabs & Paste",
+                "Time-Saving Pastes"
+			]
+        } , {
+			"name": "Ready Meals & Snacks",
+			"items": [
+				"Heat & Eat Curries",
+                "Curries and Prepared Dishes",
+                "Savoury Indian Snacks",
+                "Chips & Crisps",
+                "Biscuits & Wafers",
+                "Sweets & Desserts",
+                "Packet Mixes",
+                "Bhel, Boondi & Bhujias",
+                "Namkeen Dals & Spicy Peas"
+			]
+        } , {
+			"name": "Frozen",
+			"items": [
+				"Frozen Vegetables",
+                "Asian Frozen Vegetables",
+                "Frozen Seafood",
+                "Frozen Coconut",
+                "Frozen Snacks",
+                "Frozen Kebab"
+			]
+        }]
+	}, {
+		"id": "05029",
+		"name": "OILS, GHEE, RICE, FLOUR & GRAINS",
+        "subNav": [{
+			"name": "OILS & GHEE",
+			"items": [
+				"Ghee",
+                "Almond Oil",
+                "Castor Oil",
+                "Coconut Oil",
+                "Sesame Oil (Gingelly, Til)",
+                "GINGELLY OIL",
+                "Groundnut Oil",
+                "Jasmine Oil",
+                "Mustard Oil",
+                "Olive Oil",
+                "Sunflower Oil",
+                "Other Oils"
+			]
+        }, {
+			"name": "RICE",
+			"items": [
+				"Sona Masoori Rice",
+                "Basmati Rice",
+                "Ground & Idli Rice",
+                "Rice Flakes (Pawa)",
+                "Ponni Rice",
+                "Long Grain Rice",
+                "Matta Rice",
+                "Thai Rice",
+                "Organic Rice",
+                "Ready to Eat Rice"
+			]
+        }, {
+			"name": "Dals & Grains",
+			"items": [
+				"Toor Dal",
+                "Urid Dal",
+                "Moong Dal",
+                "Chana Dal",
+                "Daria Dal",
+                "Masoor Dal",
+                "Green Lentils",
+                "Whole Grains",
+                "Beans",
+                "Peas",
+                "Chowri",
+                "Organic Dals",
+                "Other Dals & Grains"
+			]
+        }, {
+			"name": "Flours",
+			"items": [
+				"Wheat & Atta Flour",
+                "Rice Flour",
+                "Barley Flour",
+                "Bajri Flour",
+                "Corn Flour",
+                "Gram Flour",
+                "Ragi Flour",
+                "Juwar Flour",
+                "Soya Flour",
+                "Coconut Flour",
+                "Semolina & Rava",
+                "Organic Flours"
+			]
+        }]
+	}, {
+		"id": "75701",
+		"name": "KITCHEN & HOME",
+        "subNav": [{
+			"name": "KITCHEN SHOP",
+			"items": [
+				"Cookware",
+                "Pressure Cookers",
+                "Kitchen Utensils & Cutlery",
+                "Tableware",
+                "Serving Ware",
+                "Party Disposables"
+			]
+        }, {
+			"name": "Pooja Shop",
+			"items": [
+				"Pooja Essentials",
+                "Basic Pooja Items",
+                "Camphor & Incense",
+                "Special Pooja Items",
+                "Brass & Copper Items",
+                "Clay & Designer Diyas",
+                "Garland (Haar)",
+                "Idols & Stoles"
+			]
+        }, {
+			"name": "Health & Beauty",
+			"items": [
+				"Beauty Care",
+                "Soaps",
+                "Hair Care",
+                "Massage Oils",
+                "Health Care",
+                "Balms"
+			]
+        }, {
+			"name": "Pooja Shop",
+			"items": [
+				"Pooja Essentials",
+                "Basic Pooja Items",
+                "Camphor & Incense",
+                "Special Pooja Items",
+                "Brass & Copper Items",
+                "Clay & Designer Diyas",
+                "Garland (Haar)",
+                "Idols & Stoles"
+			]
+        }]
 	}]
 }

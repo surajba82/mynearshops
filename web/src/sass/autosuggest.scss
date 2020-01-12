@@ -1,5 +1,9 @@
 .react-autosuggest__container {
     position: relative;
+
+    input {
+      border: 1px solid rgba(0,0,0,0.1) !important;
+    }
   }
   
   .react-autosuggest__input {
@@ -47,9 +51,9 @@
   
   .react-autosuggest__suggestion {
       cursor: pointer;
-      padding: 10px 20px;
+      padding: 4px;
   }
   
   .react-autosuggest__suggestion--highlighted {
-      background-color: #ddd;
+      background-color: #f2f2f2;
   }

@@ -33,7 +33,7 @@ class Search extends Component {
                         selectValue={(store) => this.setState({storeUrl: `${store.storeUrl}`})}
                       />
                       <button 
-                        className="button is-small is-primary" 
+                        className="button is-small" 
                         css={{
                           position: 'absolute', 
                           top: '8px', 
