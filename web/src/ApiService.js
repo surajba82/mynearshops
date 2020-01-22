@@ -160,6 +160,11 @@ class ApiService {
     return this.userInstance.get(url);
   }
 
+  fetchProducts() {
+    const url = `/${this._params.brand}/shopdetail/products`;
+    return this.userInstance.get(url);
+  }
+
 }
 
 const ApiServiceSingleton = new ApiService();

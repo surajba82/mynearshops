@@ -29,9 +29,6 @@ export const fetchStores = () => async (dispatch, getState) => {
     //dispatch(toggleUploadListLoading(false))
 };
 
-
-
-
 export const clearAppData = () => ({
     type: CLEAR_APP_DATA
 })

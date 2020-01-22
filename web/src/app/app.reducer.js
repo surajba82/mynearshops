@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import {data} from '../data/data.reducer';
 import home from '../scenes/Home/home.reducer';
+import shop from '../scenes/Shop/shop.reducer';
 
 const initialState = {
   
@@ -19,4 +20,5 @@ export default combineReducers({
   app,
   data,
   home,
+  shop,
 });

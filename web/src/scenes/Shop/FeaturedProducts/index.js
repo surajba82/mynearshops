@@ -14,9 +14,15 @@ const FeaturedProducts = (props) => {
                 }}
             >Featured Products</h3>
             <div className="columns">
-                <div className="column" css={{textAlign:'center', border:'1px solid rgba(0,0,0,0.1)'}}>
+                <div className="column" css={{
+                        textAlign:'center', 
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
+                        backgroundColor: 'rgba(0,0,0,0.01)',
+                        margin: '10px',
+                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    }}>
                     <figure className="image is-128x128">
-                        <img src="./images/products/butter.jpeg" />
+                        <img src="/images/products/butter.jpeg" />
                         <div>
                             <div><a>Lorem ipsum</a></div>
                             <div css={{display: 'flex', justifyContent: 'center'}}>
@@ -28,13 +34,19 @@ const FeaturedProducts = (props) => {
                                 <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
                             </div>
                             <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-small is-primary">Add</button></div>
+                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
                     </figure>
                 </div>
-                <div className="column" css={{textAlign:'center', border:'1px solid rgba(0,0,0,0.1)'}}>
+                <div className="column" css={{
+                        textAlign:'center', 
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
+                        backgroundColor: 'rgba(0,0,0,0.01)',
+                        margin: '10px',
+                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    }}>
                     <figure className="image is-128x128">
-                        <img src="./images/products/toiletroll.jpeg" />
+                        <img src="/images/products/toiletroll.jpeg" />
                         <div>
                             <div><a>Lorem ipsum</a></div>
                             <div css={{display: 'flex', justifyContent: 'center'}}>
@@ -46,13 +58,19 @@ const FeaturedProducts = (props) => {
                                 <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
                             </div>
                             <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-small is-primary">Add</button></div>
+                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
                     </figure>
                 </div>
-                <div className="column" css={{textAlign:'center', border:'1px solid rgba(0,0,0,0.1)'}}>
+                <div className="column" css={{
+                        textAlign:'center', 
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
+                        backgroundColor: 'rgba(0,0,0,0.01)',
+                        margin: '10px',
+                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    }}>
                     <figure className="image is-128x128">
-                        <img src="./images/products/pizza.jpeg" />
+                        <img src="/images/products/pizza.jpeg" />
                         <div>
                             <div><a>Lorem ipsum</a></div>
                             <div css={{display: 'flex', justifyContent: 'center'}}>
@@ -64,13 +82,19 @@ const FeaturedProducts = (props) => {
                                 <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
                             </div>
                             <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-small is-primary">Add</button></div>
+                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
                     </figure>
                 </div>
-                <div className="column" css={{textAlign:'center', border:'1px solid rgba(0,0,0,0.1)'}}>
+                <div className="column" css={{
+                        textAlign:'center', 
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
+                        backgroundColor: 'rgba(0,0,0,0.01)',
+                        margin: '10px',
+                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    }}>
                     <figure className="image is-128x128">
-                        <img src="./images/products/cornflakes.jpeg" />
+                        <img src="/images/products/cornflakes.jpeg" />
                         <div>
                             <div><a>Lorem ipsum</a></div>
                             <div css={{display: 'flex', justifyContent: 'center'}}>
@@ -82,13 +106,19 @@ const FeaturedProducts = (props) => {
                                 <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
                             </div>
                             <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-small is-primary">Add</button></div>
+                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
                     </figure>
                 </div>
-                <div className="column" css={{textAlign:'center', border:'1px solid rgba(0,0,0,0.1)'}}>
+                <div className="column" css={{
+                        textAlign:'center', 
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
+                        backgroundColor: 'rgba(0,0,0,0.01)',
+                        margin: '10px',
+                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    }}>
                     <figure className="image is-128x128">
-                        <img src="./images/products/fairy.jpeg" />
+                        <img src="/images/products/fairy.jpeg" />
                         <div>
                             <div><a>Lorem ipsum</a></div>
                             <div css={{display: 'flex', justifyContent: 'center'}}>
@@ -100,13 +130,19 @@ const FeaturedProducts = (props) => {
                                 <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
                             </div>
                             <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-small is-primary">Add</button></div>
+                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
                     </figure>
                 </div>
-                <div className="column" css={{textAlign:'center', border:'1px solid rgba(0,0,0,0.1)'}}>
+                <div className="column" css={{
+                        textAlign:'center', 
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
+                        backgroundColor: 'rgba(0,0,0,0.01)',
+                        margin: '10px',
+                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    }}>
                     <figure className="image is-128x128">
-                        <img src="./images/products/butter.jpeg" />
+                        <img src="/images/products/butter.jpeg" />
                         <div>
                             <div><a>Lorem ipsum</a></div>
                             <div css={{display: 'flex', justifyContent: 'center'}}>
@@ -118,15 +154,21 @@ const FeaturedProducts = (props) => {
                                 <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
                             </div>
                             <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-small is-primary">Add</button></div>
+                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
                     </figure>
                 </div>
             </div>
             <div className="columns">
-                <div className="column" css={{textAlign:'center', border:'1px solid rgba(0,0,0,0.1)'}}>
+                <div className="column" css={{
+                        textAlign:'center', 
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
+                        backgroundColor: 'rgba(0,0,0,0.01)',
+                        margin: '10px',
+                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    }}>
                     <figure className="image is-128x128">
-                        <img src="./images/products/korma.jpeg" />
+                        <img src="/images/products/korma.jpeg" />
                         <div>
                             <div><a>Lorem ipsum</a></div>
                             <div css={{display: 'flex', justifyContent: 'center'}}>
@@ -138,13 +180,19 @@ const FeaturedProducts = (props) => {
                                 <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
                             </div>
                             <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-small is-primary">Add</button></div>
+                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
                     </figure>
                 </div>
-                <div className="column" css={{textAlign:'center', border:'1px solid rgba(0,0,0,0.1)'}}>
+                <div className="column" css={{
+                        textAlign:'center', 
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
+                        backgroundColor: 'rgba(0,0,0,0.01)',
+                        margin: '10px',
+                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    }}>
                     <figure className="image is-128x128">
-                        <img src="./images/products/tuna.jpeg" />
+                        <img src="/images/products/tuna.jpeg" />
                         <div>
                             <div><a>Lorem ipsum</a></div>
                             <div css={{display: 'flex', justifyContent: 'center'}}>
@@ -156,13 +204,19 @@ const FeaturedProducts = (props) => {
                                 <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
                             </div>
                             <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-small is-primary">Add</button></div>
+                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
                     </figure>
                 </div>
-                <div className="column" css={{textAlign:'center', border:'1px solid rgba(0,0,0,0.1)'}}>
+                <div className="column" css={{
+                        textAlign:'center', 
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
+                        backgroundColor: 'rgba(0,0,0,0.01)',
+                        margin: '10px',
+                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    }}>
                     <figure className="image is-128x128">
-                        <img src="./images/products/cider.jpeg" />
+                        <img src="/images/products/cider.jpeg" />
                         <div>
                             <div><a>Lorem ipsum</a></div>
                             <div css={{display: 'flex', justifyContent: 'center'}}>
@@ -174,13 +228,19 @@ const FeaturedProducts = (props) => {
                                 <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
                             </div>
                             <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-small is-primary">Add</button></div>
+                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
                     </figure>
                 </div>
-                <div className="column" css={{textAlign:'center', border:'1px solid rgba(0,0,0,0.1)'}}>
+                <div className="column" css={{
+                        textAlign:'center', 
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
+                        backgroundColor: 'rgba(0,0,0,0.01)',
+                        margin: '10px',
+                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    }}>
                     <figure className="image is-128x128">
-                        <img src="./images/products/fudge.jpeg" />
+                        <img src="/images/products/fudge.jpeg" />
                         <div>
                             <div><a>Lorem ipsum</a></div>
                             <div css={{display: 'flex', justifyContent: 'center'}}>
@@ -192,13 +252,19 @@ const FeaturedProducts = (props) => {
                                 <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
                             </div>
                             <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-small is-primary">Add</button></div>
+                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
                     </figure>
                 </div>
-                <div className="column" css={{textAlign:'center', border:'1px solid rgba(0,0,0,0.1)'}}>
+                <div className="column" css={{
+                        textAlign:'center', 
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
+                        backgroundColor: 'rgba(0,0,0,0.01)',
+                        margin: '10px',
+                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    }}>
                     <figure className="image is-128x128">
-                        <img src="./images/products/bean.jpeg" />
+                        <img src="/images/products/bean.jpeg" />
                         <div>
                             <div><a>Lorem ipsum</a></div>
                             <div css={{display: 'flex', justifyContent: 'center'}}>
@@ -210,13 +276,19 @@ const FeaturedProducts = (props) => {
                                 <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
                             </div>
                             <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-small is-primary">Add</button></div>
+                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
                     </figure>
                 </div>
-                <div className="column" css={{textAlign:'center', border:'1px solid rgba(0,0,0,0.1)'}}>
+                <div className="column" css={{
+                        textAlign:'center', 
+                        borderTop: '1px solid rgba(0,0,0,0.1)',
+                        backgroundColor: 'rgba(0,0,0,0.01)',
+                        margin: '10px',
+                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    }}>
                     <figure className="image is-128x128">
-                        <img src="./images/products/fudge1.jpeg" />
+                        <img src="/images/products/fudge1.jpeg" />
                         <div>
                             <div><a>Lorem ipsum</a></div>
                             <div css={{display: 'flex', justifyContent: 'center'}}>
@@ -228,7 +300,7 @@ const FeaturedProducts = (props) => {
                                 <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
                             </div>
                             <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-small is-primary">Add</button></div>
+                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
                     </figure>
                 </div>

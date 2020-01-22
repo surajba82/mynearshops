@@ -3,15 +3,14 @@ import { withRouter } from "react-router";
 import ApiService from '../../ApiService';
 import { connect } from 'react-redux';
 import {clearAppData} from '../../app/app.actions';
-import {SHOP} from '../../app/app.config';
 import {fetchShopDetail} from './shop.actions';
-import Navbar from '../../components/Navbar';
-import Nav from '../../components/Nav';
 import FeaturedProducts from "./FeaturedProducts";
 import {getDataState} from '../../data/data.selectors';
+import {SHOP} from '../../app/app.config';
 import {SearchProducts} from './SearchProducts/SearchProducts';
 import {IconSearch, IconDeliveryTruck, IconCar} from '../../components/Icons';
 import Carousel from '../../components/Carousel';
+import loadable from '../../components/loadable';
 /** @jsx jsx */ import { jsx } from '@emotion/core';
 
 class ShopDetail extends Component {
@@ -21,59 +20,26 @@ class ShopDetail extends Component {
     ApiService.setParam('brand', params.id);
     ApiService.addInterceptors(() => this.props.handleSessionTimeout());
 
-    this.props.fetchShopDetail();
+    this.props.fetchShopDetail(params.id);
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      this.props.fetchShopDetail();
+      this.props.fetchShopDetail(this.props.match.params.id);
     }
   }
 
-  componentWillUnmount() {
-    this.props.clearAppData();
-  }
+  
   
   render() {
     const {
-      storeName,
-      navTree,
-      products,
+      
+      shopUrl,
     } = this.props;
-    const {match: { params }} = this.props;
-    const shopObj = SHOP[params.id];
+    const shopObj = SHOP[shopUrl];
     
     return (
-      <React.Fragment>
-        <div className='wrapper' css={{padding: '10px 0'}}>
-        <div className="columns">
-          <div className="column"><img src={shopObj.shopLogo} css={{maxWidth: '120px'}} /></div>
-          <div className="column"></div>
-          <div className="column is-two-thirds">
-              <div className="field has-addons">
-                <div className="control" css={{width:'100%'}}>
-                  <SearchProducts 
-                    products={products}
-                    selectedValue={''}
-                    selectValue={(store) => console.log('hi')}
-                  />
-                </div>
-                <div className="control">
-                    <a className="button is-primary">
-                      <IconSearch />
-                    </a>
-                </div>
-              </div>
-          </div>
-        </div>
-        </div>
-        <div css={{background: '#f6f6f6', boxShadow: '0 1px 3px rgba(0,0,0,0.3)'}}>
-          <div className='wrapper'>
-            <div css={{display: 'flex', justifyContent: 'space-between'}}>
-              <Nav navTree={navTree} />
-            </div>
-          </div>
-        </div>
+      <div>
         <div className='wrapper' css={{marginTop:'16px'}}>
           <div className="columns">
             <div className="column" css={{zIndex: '1', background:'linear-gradient(to right, #fff 2%, #fff 70%, rgba(255,255,255,0) 100%)'}}>
@@ -91,7 +57,7 @@ class ShopDetail extends Component {
                     marginBottom: '10px',
                     borderBottom: '1px solid rgba(0,0,0,0.1)',
                     color: 'black'}}>
-                      {shopObj.shopName}
+                      {shopObj && shopObj.shopName}
                   </div>
                   <div css={{display: 'flex', justifyContent: 'space-between'}}>
                     <div>
@@ -111,7 +77,7 @@ class ShopDetail extends Component {
         </div>
         <br/><br/>
         <FeaturedProducts />
-      </React.Fragment>
+      </div>
     )
   }
 }
@@ -120,19 +86,14 @@ export {ShopDetail};
 
 const mapStateToProps = (state) => {
   const {shopDetail} = getDataState(state);
-
-  const {
-    storeId = '',
-    storeName = '',
-    navTree = [],
-    products =[],
-  } = shopDetail;
+  const {shopUrl} = shopDetail;
+  const loading = state.shop.loading;
+  const loadingText = state.shop.loadingText;
 
   return {
-    storeId,
-    storeName,
-    navTree,
-    products
+    shopUrl,
+    loading,
+    loadingText
   }
 };
 const mapDispatchToProps = (dispatch) => {
@@ -145,4 +106,4 @@ const mapDispatchToProps = (dispatch) => {
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ShopDetail));
+)(loadable(ShopDetail)));

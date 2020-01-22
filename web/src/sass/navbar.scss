@@ -36,21 +36,21 @@
       border-left: 1px solid rgba(0, 0, 0, 0.2);
       color: black;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 1rem;
       display: flex;
 
       span {
         margin-right: 4px;
       }
 
-      .badge {
-        background-color: red;
+      &.badge {
+        background-color: #bf0000;
         color: #fff;
       }
 
       svg {
         transform: rotate(180deg);
-        margin-top: 3px;
+        margin-top: 8px;
       }
 
       &:hover{
@@ -103,17 +103,16 @@
       z-index: 2;
     }
 
-    nav ul.megamenu > ul {
-      width: 18%;
-      
-    }
-
     nav ul.megamenu ul li a {
       border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
       padding: 4px;
       white-space: nowrap;
       margin: 0 4px;
-      font-size: 14px;
+      font-size: 1rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     nav ul.megamenu ul li:hover > ul {

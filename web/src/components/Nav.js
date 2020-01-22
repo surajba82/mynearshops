@@ -1,8 +1,9 @@
 import React from 'react';
-import {IconChevronRight, IconChevronTop} from './Icons';
+import {IconChevronTop} from './Icons';
+import {Link} from 'react-router-dom';
 /** @jsx jsx */ import { jsx } from '@emotion/core';
 
-  const NavList = ({list}) => {
+  const NavList = ({list, shopUrl}) => {
     let hasMenu = false;
     
     return (
@@ -10,15 +11,15 @@ import {IconChevronRight, IconChevronTop} from './Icons';
       {list.map(item => (
           <li key={item.id}>
             <a><span key={item.name}>{item.name}</span> <IconChevronTop /></a>
-            {item.subNav && <ul className='megamenu'><SubList list={item.subNav} /></ul>}
+            {item.subNav && <ul className='megamenu'><SubList list={item.subNav} shopUrl={shopUrl} /></ul>}
           </li>
       ))}
-      <li><a><span className='badge'>OFFERS</span></a></li>
+      <li><a className='badge'><span >OFFERS</span></a></li>
       </ul>
     )
   };
 
-  const SubList = ({list}) => {
+  const SubList = ({list, shopUrl}) => {
     return (
       <React.Fragment>
         {list.map((item, index) => (
@@ -26,19 +27,22 @@ import {IconChevronRight, IconChevronTop} from './Icons';
               <div key={index} css={{
                 display: 'flex',
                 flexDirection: 'column',
-                margin: '10px',
-                width: '20%',
+                margin: '5px',
+                width: '24%',
+                border: '1px solid rgba(0,0,0,0.3)'
               }}>
                 <div css={{
                   color: 'black',
                   padding: '5px 10px',
                   textTransform: 'uppercase',
                   borderBottom: '1px solid rgba(0,0,0,0.1)',
-                  fontWeight: 'bold'
+                  fontWeight: 'bold',
+                  background: '#e6e6e6',
+                  fontSize: '1rem'
                 }}>{item.name}</div>
                 <ul>
                   {item.items.map(k => (
-                  <li key={k}><a>{k}</a></li>
+                  <li key={k}><Link to={`/${shopUrl}/category/${k.toLowerCase().replace(' ', '-')}`}>{k}</Link></li>
                   ))}
                 </ul>
             </div>
@@ -63,14 +67,15 @@ class Nav extends React.Component {
   
   render() {
     const {
-        navTree
+        navTree,
+        shopUrl
     } = this.props;
 
     
     
     return (      
         <nav>
-            <NavList list={this.props.navTree} />
+            <NavList list={navTree} shopUrl={shopUrl} />
         </nav>
     );
   }

@@ -7,24 +7,18 @@
 		"quantity": "2l",
 		"price": "£1.60",
 		"offer": "2 for £3",
-		"tags": ["milk"],
-		"superDept": "Chilled Foods",
-		"department": "milk, egg, butter and cream",
-		"inStock": true,
-		"imageUrl": "images/products/semimilk.jpg"
+		"category": "dairy",
+		"department": "grocery",
+		"imageUrl": "/images/products/semimilk.jpg"
 	},
 	{
 		"_id": "785647",
 		"name": "Whole Milk",
 		"quantity": "4l",
 		"price": "£2.60",
-		"tags": ["milk"],
-		"inStock": true,
-		"rollBack": true,
-		"oldPrice": "3£",
-		"superDept": "Chilled Foods",
-		"department": "milk, egg, butter and cream",
-		"imageUrl": "images/products/wholemilk.jpg"
+		"category": "dairy",
+		"department": "grocery",
+		"imageUrl": "/images/products/wholemilk.jpg"
 	}],
 	"navTree":  [{
 		"id": "77718",

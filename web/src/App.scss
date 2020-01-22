@@ -16,12 +16,32 @@
 @import '../node_modules/bulma/sass/layout/section.sass';
 
 // Custom styles
+a {
+    color: #fa7e03;
+}
 .wrapper {
-    max-width: 1200px;
+    max-width: 1370px;
     margin: 0 auto;
 }
 .carousel .slider {
     height: 260px;
+}
+.carousel {
+    .slider {
+        height: 260px;
+    }
+
+    .slide {
+        .legend{
+            background-color: rgba(0,0,0,0.6);
+            font-size: 24px;
+            top: 120px;
+            width: 55%;
+            bottom: auto;
+            border-radius: 0;
+            opacity: 1;
+        }
+    }
 }
 @import './sass/autosuggest.scss';
 @import './sass/navbar.scss';

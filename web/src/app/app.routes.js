@@ -1,11 +1,7 @@
-import {Redirect} from 'react-router-dom';
 import React from 'react';
 import Home from '../scenes/Home';
 import Shop from '../scenes/Shop/Shop';
-import {
-  HOME,
-  STORE_MOON,
-} from './app.config';
+import Category from '../scenes/Category/Category'
 
 export const routes = {
   byId: {
@@ -19,10 +15,16 @@ export const routes = {
       exact: true,
       main: () => <Shop />
     },
+    category: {
+      path: `/:id/category/:id`,
+      exact: true,
+      main: () => <Category />
+    },
   },
   all: [
     'home',
     'shop',
+    'category',
   ],
 };
 

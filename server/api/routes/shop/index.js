@@ -6,7 +6,7 @@ router.get('/shopdetail', (req, res) => {
     let data = {
         data: storeDetailResponse
     };
-    res.send(JSON.stringify(data))
+    setTimeout(() => res.send(JSON.stringify(data)),1500);
 });
 
 

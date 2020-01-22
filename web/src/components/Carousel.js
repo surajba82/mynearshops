@@ -12,16 +12,16 @@ export default () => (
     infiniteLoop={true}
     >
     <div>
-      <img src="./images/carousel/1.webp" />
-      <p className="legend">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      <img src="/images/carousel/1.webp" />
+      <p className="legend">UK's largest Asian Grocers </p>
     </div>
     <div>
-      <img src="./images/carousel/3.webp" />
-      <p className="legend">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+      <img src="/images/carousel/2.jpg" />
+      <p className="legend">Quality Fruits and Vegetables </p>
     </div>
     <div>
-      <img src="./images/carousel/2.jpg" />
-      <p className="legend">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <img src="/images/carousel/3.webp" />
+      <p className="legend">Choose a delivery or collection slot that suits you </p>
     </div>
     
   </Carousel>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {fetchStores, clearAppData} from '../../app/app.actions';
 import Search from './SearchStores';
 import Featured from "./Featured/Featured";
-import Offers from "./Offers/Offers";
+/** @jsx jsx */ import { jsx } from '@emotion/core';
 
 class Home extends Component {
   componentDidMount() {
@@ -16,8 +16,17 @@ class Home extends Component {
   
   render() {
     return (
-      <div>
-        <Search />
+      <div className='wrapper'>
+        <div css={{
+          background: 'url("./images/bg.jpg") no-repeat center center',
+          display: 'flex',
+          alignItems: 'center',
+          minHeight: '600px',
+          justifyContent: 'center'
+        }}>
+          <Search />
+        </div>
+        
         <Featured />
       </div>
     )

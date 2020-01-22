@@ -1,0 +1,124 @@
+{
+    "superCategory": {
+        "id": "33435",
+        "name": "Fruit & Vegetable"
+    },
+    "subCategories": [{
+        "id": "1",
+        "name":"General Veg",
+        "selected": true
+    }, {
+        "id": "2",
+        "name":"Leafy Veg"
+    }, {
+        "id": "3",
+        "name":"Fresh Fruits"
+    }],
+    "products":[{
+		"_id": "1",
+		"name": "BOMBAY ONION (1KG)",
+		"price": "£1.59",
+		"offer": "-10%",
+		"imageUrl": "/images/products/Bombay-Onion-1-Kg-_Loose_large.webp"
+	}, {
+		"_id": "2",
+		"name": "COCONUT (SINGLE)",
+		"price": "£0.99",
+		"imageUrl": "/images/products/Coconut-_Single_large.webp"
+	}, {
+		"_id": "3",
+		"name": "CUCUMBER",
+		"price": "£0.99",
+		"offer": "2 for £1.50",
+		"imageUrl": "/images/products/Cucumber-_Single_large.webp"
+	}, {
+		"_id": "4",
+		"name": "DRUMSTICKS",
+		"price": "£3.99",
+		"imageUrl": "/images/products/Drumsticks-250g_large.webp"
+	}, {
+		"_id": "5",
+		"name": "CAULIFLOWER (SINGLE)",
+		"price": "£1.50",
+		"imageUrl": "/images/products/Fresh-Cauliflower-_Single_large.webp"
+	}, {
+		"_id": "6",
+		"name": "GREEN CHILLIES 100G",
+		"price": "£0.69",
+		"imageUrl": "/images/products/Green-Chillies-100g_large.webp"
+	}, {
+		"_id": "7",
+		"name": "INDIAN ARBI 250G",
+		"price": "£2.39",
+		"imageUrl": "/images/products/Indian-Arbi-250g_large.webp"
+	}, {
+		"_id": "8",
+		"name": "LONG AUBERGINE (500G)",
+		"price": "£3.89",
+		"imageUrl": "/images/products/Long-Aubergine-500g_large.webp"
+	}, {
+		"_id": "9",
+		"name": "GREEN PEPPER (SINGLE)",
+		"offer": "2 for £2",
+		"price": "£1.39",
+		"imageUrl": "/images/products/Green-Pepper_large.webp"
+	}, {
+		"_id": "10",
+		"name": "GUWAR (350g)",
+		"price": "£3.50",
+		"imageUrl": "/images/products/Guwar-250g_large.webp"
+	}, {
+		"_id": "11",
+		"name": "GREEN BEANS (500G)",
+		"price": "£1.59",
+		"offer": "-10%",
+		"imageUrl": "/images/products/Long-Green-Beans-500g_large.webp"
+	}, {
+		"_id": "12",
+		"name": "PUMPKIN (1KG)",
+		"price": "£1.99",
+		"imageUrl": "/images/products/Pumpkin-1-Kg_large.webp"
+	}, {
+		"_id": "13",
+		"name": "CARROTS (500G)",
+		"price": "£1.00",
+		"offer": "2 for £1.50",
+		"imageUrl": "/images/products/Polished-Carrots-500g_large.webp"
+	}, {
+		"_id": "14",
+		"name": "TOMATO (500G)",
+		"price": "£3.99",
+		"imageUrl": "/images/products/Tomato-_Class-1_-500g_large.webp"
+	}, {
+		"_id": "15",
+		"name": "VINE TOMATO (500G)",
+		"price": "£1.50",
+		"imageUrl": "/images/products/Vine_Tomato_500g_large.webp"
+	}, {
+		"_id": "16",
+		"name": "WHITE CABBAGE",
+		"price": "£1.59",
+		"offer": "-10%",
+		"imageUrl": "/images/products/White-Cabbage-_Single_large.webp"
+	}, {
+		"_id": "17",
+		"name": "WHITE POTATOES (2KG)",
+		"price": "£0.99",
+		"imageUrl": "/images/products/White-Potatoes-2-Kg_large.webp"
+	}, {
+		"_id": "18",
+		"name": "LIME (PACK OF 4)",
+		"price": "£1.00",
+		"imageUrl": "/images/products/Lime-_Pack-of-4_large.webp"
+	}, {
+		"_id": "19",
+		"name": "SHALLOT ONIONS (400G)",
+		"price": "£3.99",
+		"imageUrl": "/images/products/Shallot-Onions-400g_large.webp"
+	}, {
+		"_id": "20",
+		"name": "LONG GREEN BEANS",
+		"price": "£1.50",
+		"imageUrl": "/images/products/Long-Green-Beans-500g_large.webp"
+	}]
+}

@@ -4025,12 +4025,27 @@ button.dropdown-item {
     .section.is-large {
       padding: 18rem 1.5rem; } }
 
+a {
+  color: #fa7e03; }
+
 .wrapper {
-  max-width: 1200px;
+  max-width: 1370px;
   margin: 0 auto; }
 
 .carousel .slider {
   height: 260px; }
+
+.carousel .slider {
+  height: 260px; }
+
+.carousel .slide .legend {
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 24px;
+  top: 120px;
+  width: 55%;
+  bottom: auto;
+  border-radius: 0;
+  opacity: 1; }
 
 .react-autosuggest__container {
   position: relative; }
@@ -4111,16 +4126,16 @@ nav > ul > li > a {
   border-left: 1px solid rgba(0, 0, 0, 0.2);
   color: black;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 1rem;
   display: flex; }
   nav > ul > li > a span {
     margin-right: 4px; }
-  nav > ul > li > a .badge {
-    background-color: red;
+  nav > ul > li > a.badge {
+    background-color: #bf0000;
     color: #fff; }
   nav > ul > li > a svg {
     transform: rotate(180deg);
-    margin-top: 3px; }
+    margin-top: 8px; }
   nav > ul > li > a:hover svg {
     transition: transform .5s ease-in-out;
     transform: rotate(0deg); }
@@ -4161,15 +4176,14 @@ nav ul.megamenu {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   z-index: 2; }
 
-nav ul.megamenu > ul {
-  width: 18%; }
-
 nav ul.megamenu ul li a {
   border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
   padding: 4px;
   white-space: nowrap;
   margin: 0 4px;
-  font-size: 14px; }
+  font-size: 1rem; }
+  nav ul.megamenu ul li a:hover {
+    text-decoration: underline; }
 
 nav ul.megamenu ul li:hover > ul {
   display: block; }

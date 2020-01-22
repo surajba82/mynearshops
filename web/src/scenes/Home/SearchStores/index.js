@@ -22,9 +22,10 @@ class Search extends Component {
       )
     } else {
       return (
-        <div className="columns is-centered">
-            <div className="column is-half">
-            <form css={{marginTop: '20px'}} onSubmit={() => console.log('form submit')}>
+        <div css={{width: '100%'}}>
+            <div css={{backgroundColor:'rgba(0,0,0,0.5)', padding: '20px'}}>
+              <div css={{fontSize:'24px', color: 'white', textAlign: 'center', width: '60%', margin: '0 auto 10px auto'}}>Search stores by name, city or postcode</div>
+              <form css={{marginTop: '20px', width: '60%', margin: '0 auto'}} onSubmit={() => console.log('form submit')}>
                 <div className="field has-addons" >
                   <div className="control" css={{width: '100%'}}>
                       <SearchStores 
@@ -55,7 +56,8 @@ class Search extends Component {
                 </div>
             </form>
             </div>
-        </div>
+            
+            </div>
       )
     }
   }
