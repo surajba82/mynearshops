@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {updateCart} from '../../../data/data.actions';
 import Autosuggest from 'react-autosuggest';
 /** @jsx jsx */ import { jsx } from '@emotion/core';
 
@@ -111,7 +113,8 @@ class SearchProducts extends Component {
 
   onSuggestionSelected = (e, {suggestion}) => {
     e.preventDefault();
-    this.props.selectValue(suggestion)
+    this.props.selectValue(suggestion);
+    this.props.dispatch(updateCart(suggestion));
   }
 
   render() {
@@ -153,4 +156,21 @@ class SearchProducts extends Component {
 
 }
 
-export {SearchProducts};
+//export {SearchProducts};
+const mapStateToProps = (state) => {
+  const {cartItems} = state.data;
+  
+  return {
+    cartItems
+  }
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatch
+  }
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SearchProducts);

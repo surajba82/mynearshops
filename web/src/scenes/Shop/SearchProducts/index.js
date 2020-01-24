@@ -1,6 +1,6 @@
 import React from 'react';
 import {IconSearch} from '../../../components/Icons';
-import {SearchProducts} from './SearchProducts';
+import SearchProducts from './SearchProducts';
 /** @jsx jsx */ import { jsx } from '@emotion/core';
 
 const FeaturedProducts = (props) => {

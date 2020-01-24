@@ -16,12 +16,13 @@ import app from './app.reducer';
 import {routes} from './app.routes';
 import {SHOP} from './app.config';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 import {getDataState} from '../data/data.selectors';
 import '../App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSearch, faShoppingCart, faLocationArrow, faDolly, faAngleDown, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import {SearchProducts} from '../scenes/Shop/SearchProducts/SearchProducts';
+import SearchProducts from '../scenes/Shop/SearchProducts/SearchProducts';
 import {IconSearch} from '../components/Icons';
 /** @jsx jsx */ import { jsx, CX } from '@emotion/core';
  
@@ -171,6 +172,7 @@ class App extends Component {
             <Redirect to={`/`} />
           </Switch>
         </Router>
+        <Footer />
       </Provider>
     )
   }
