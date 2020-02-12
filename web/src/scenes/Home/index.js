@@ -35,13 +35,7 @@ class Home extends Component {
 
 export {Home};
 
-const mapStateToProps = (state) => {
-  
 
-  console.log(state);
-
-  return {}
-};
 const mapDispatchToProps = (dispatch) => {
   return {
     populateStoresList: () => dispatch(fetchStores()),
@@ -50,6 +44,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps,
 )(Home);

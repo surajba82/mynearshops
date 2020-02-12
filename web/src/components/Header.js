@@ -37,7 +37,8 @@ function Header(props) {
               boxShadow: '0 3px 20px rgba(0,0,0,.5)',
               transition: 'right 0.2s'
           }}>
-            <div css={{padding: '10px'}}>
+            <div css={{padding: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
+              <div>
               {cartItems.map(item => (
                   <div key={item._id} css={{
                     display: 'flex',
@@ -59,13 +60,15 @@ function Header(props) {
                     }}>{item.price}</div>
                   </div>
               ))}
-
-              <div css={{
-                display: 'flex',
-                justifyContent: 'space-between'
-              }}>
-                <div css={{color: 'black'}}>SUBTOTAL</div>
-                <div css={{color: 'black'}}>£{totalCost.toFixed(2)}</div>
+              </div>
+              <div>
+                <div css={{
+                  display: 'flex',
+                  justifyContent: 'space-between'
+                }}>
+                  <div css={{color: 'black'}}>SUBTOTAL</div>
+                  <div css={{color: 'black'}}>£{totalCost.toFixed(2)}</div>
+                </div>
               </div>
 
               <button 

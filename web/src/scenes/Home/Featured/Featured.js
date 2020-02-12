@@ -46,7 +46,8 @@ const Featured = (props) => {
                     borderTop: '1px solid rgba(0,0,0,0.1)',
                     backgroundColor: 'rgba(0,0,0,0.01)',
                     margin: '10px',
-                    boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
+                    boxShadow: '0 3px 5px rgba(0,0,0,0.3)',
+                    justifyContent: 'center'
                 }}>
                     <figure className="image is-128x128">
                         <Link to='/vb'><img src="./images/vb.jpg" /></Link>

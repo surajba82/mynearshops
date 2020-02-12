@@ -1,312 +1,73 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {IconPlus, IconMinus} from '../../../components/Icons';
+import {updateCart} from '../../../data/data.actions';
 /** @jsx jsx */ import { jsx } from '@emotion/core';
 
 const FeaturedProducts = (props) => {
+    const {products, dispatch} = props;
+
     return (
         <div className='wrapper'>
-            <h3 
-                className="title is-4" 
-                css={{
-                    backgroundColor: 'rgba(188, 188, 188, 0.1)', 
-                    padding: '10px',
-                    marginLeft: '-0.75rem',
-                    marginRight: '-0.75rem'
-                }}
-            >Featured Products</h3>
-            <div className="columns">
-                <div className="column" css={{
-                        textAlign:'center', 
-                        borderTop: '1px solid rgba(0,0,0,0.1)',
-                        backgroundColor: 'rgba(0,0,0,0.01)',
-                        margin: '10px',
-                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
-                    }}>
-                    <figure className="image is-128x128">
-                        <img src="/images/products/butter.jpeg" />
-                        <div>
-                            <div><a>Lorem ipsum</a></div>
-                            <div css={{display: 'flex', justifyContent: 'center'}}>
-                                <div css={{color: '#fa7e03'}}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                <div>(46)</div>
+            <h3 class="title is-4">FEATURED PRODUCTS</h3>
+            <div className='columns is-multiline'>
+            {
+            products.map(product => (
+                <div key={product.id} className='column is-one-fifth' css={{textAlign: 'center', position: 'relative'}}>
+                    {product.offer && <div css={{
+                        position: 'absolute',
+                        top: '20px',
+                        right: '20px',
+                        backgroundColor: '#bf0000',
+                        borderRadius: '2px', 
+                        color: 'white',
+                        padding: '5px'
+                    }}>{product.offer}</div>}
+                    <div><img src={`${product.imageUrl}`} /></div>
+                    <div><a css={{textTransform: 'uppercase'}}>{product.name}</a></div>
+                    <div css={{fontWeight: 'bold', fontSize: '1.2rem'}}>{product.price}</div>
+                    <div css={{marginTop: '10px'}}>
+                        <div className="field has-addons" >
+                            <div className="control" css={{width: '100%', textAlign: 'center'}}>
+                                <button className="button is-small is-default"><IconMinus /></button>
+                                <input type='text' value='1' className="input is-small" css={{
+                                    width: '40px',
+                                    border: '2px solid rgba(0,0,0,0.2)',
+                                    borderLeft: '0',
+                                    borderRight: '0',
+                                    textAlign: 'center'
+                                }} />
+                                <button className="button is-small is-default"><IconPlus /></button>
+
                             </div>
-                            <div>
-                                <span css={{fontSize: '12px', textDecoration: 'line-through',marginRight: '2px'}}>£2.89</span> 
-                                <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
-                            </div>
-                            <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
                         </div>
-                    </figure>
+                    </div>
+                    <div css={{marginTop: '10px'}}>
+                    <button className="button is-primary" onClick={() => dispatch(updateCart(product))}>Add</button>
+                    </div>
                 </div>
-                <div className="column" css={{
-                        textAlign:'center', 
-                        borderTop: '1px solid rgba(0,0,0,0.1)',
-                        backgroundColor: 'rgba(0,0,0,0.01)',
-                        margin: '10px',
-                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
-                    }}>
-                    <figure className="image is-128x128">
-                        <img src="/images/products/toiletroll.jpeg" />
-                        <div>
-                            <div><a>Lorem ipsum</a></div>
-                            <div css={{display: 'flex', justifyContent: 'center'}}>
-                                <div css={{color: '#fa7e03'}}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                <div>(46)</div>
-                            </div>
-                            <div>
-                                <span css={{fontSize: '12px', textDecoration: 'line-through',marginRight: '2px'}}>£2.89</span> 
-                                <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
-                            </div>
-                            <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
-                        </div>
-                    </figure>
-                </div>
-                <div className="column" css={{
-                        textAlign:'center', 
-                        borderTop: '1px solid rgba(0,0,0,0.1)',
-                        backgroundColor: 'rgba(0,0,0,0.01)',
-                        margin: '10px',
-                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
-                    }}>
-                    <figure className="image is-128x128">
-                        <img src="/images/products/pizza.jpeg" />
-                        <div>
-                            <div><a>Lorem ipsum</a></div>
-                            <div css={{display: 'flex', justifyContent: 'center'}}>
-                                <div css={{color: '#fa7e03'}}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                <div>(46)</div>
-                            </div>
-                            <div>
-                                <span css={{fontSize: '12px', textDecoration: 'line-through',marginRight: '2px'}}>£2.89</span> 
-                                <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
-                            </div>
-                            <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
-                        </div>
-                    </figure>
-                </div>
-                <div className="column" css={{
-                        textAlign:'center', 
-                        borderTop: '1px solid rgba(0,0,0,0.1)',
-                        backgroundColor: 'rgba(0,0,0,0.01)',
-                        margin: '10px',
-                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
-                    }}>
-                    <figure className="image is-128x128">
-                        <img src="/images/products/cornflakes.jpeg" />
-                        <div>
-                            <div><a>Lorem ipsum</a></div>
-                            <div css={{display: 'flex', justifyContent: 'center'}}>
-                                <div css={{color: '#fa7e03'}}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                <div>(46)</div>
-                            </div>
-                            <div>
-                                <span css={{fontSize: '12px', textDecoration: 'line-through',marginRight: '2px'}}>£2.89</span> 
-                                <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
-                            </div>
-                            <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
-                        </div>
-                    </figure>
-                </div>
-                <div className="column" css={{
-                        textAlign:'center', 
-                        borderTop: '1px solid rgba(0,0,0,0.1)',
-                        backgroundColor: 'rgba(0,0,0,0.01)',
-                        margin: '10px',
-                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
-                    }}>
-                    <figure className="image is-128x128">
-                        <img src="/images/products/fairy.jpeg" />
-                        <div>
-                            <div><a>Lorem ipsum</a></div>
-                            <div css={{display: 'flex', justifyContent: 'center'}}>
-                                <div css={{color: '#fa7e03'}}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                <div>(46)</div>
-                            </div>
-                            <div>
-                                <span css={{fontSize: '12px', textDecoration: 'line-through',marginRight: '2px'}}>£2.89</span> 
-                                <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
-                            </div>
-                            <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
-                        </div>
-                    </figure>
-                </div>
-                <div className="column" css={{
-                        textAlign:'center', 
-                        borderTop: '1px solid rgba(0,0,0,0.1)',
-                        backgroundColor: 'rgba(0,0,0,0.01)',
-                        margin: '10px',
-                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
-                    }}>
-                    <figure className="image is-128x128">
-                        <img src="/images/products/butter.jpeg" />
-                        <div>
-                            <div><a>Lorem ipsum</a></div>
-                            <div css={{display: 'flex', justifyContent: 'center'}}>
-                                <div css={{color: '#fa7e03'}}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                <div>(46)</div>
-                            </div>
-                            <div>
-                                <span css={{fontSize: '12px', textDecoration: 'line-through',marginRight: '2px'}}>£2.89</span> 
-                                <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
-                            </div>
-                            <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-            <div className="columns">
-                <div className="column" css={{
-                        textAlign:'center', 
-                        borderTop: '1px solid rgba(0,0,0,0.1)',
-                        backgroundColor: 'rgba(0,0,0,0.01)',
-                        margin: '10px',
-                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
-                    }}>
-                    <figure className="image is-128x128">
-                        <img src="/images/products/korma.jpeg" />
-                        <div>
-                            <div><a>Lorem ipsum</a></div>
-                            <div css={{display: 'flex', justifyContent: 'center'}}>
-                                <div css={{color: '#fa7e03'}}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                <div>(46)</div>
-                            </div>
-                            <div>
-                                <span css={{fontSize: '12px', textDecoration: 'line-through',marginRight: '2px'}}>£2.89</span> 
-                                <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
-                            </div>
-                            <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
-                        </div>
-                    </figure>
-                </div>
-                <div className="column" css={{
-                        textAlign:'center', 
-                        borderTop: '1px solid rgba(0,0,0,0.1)',
-                        backgroundColor: 'rgba(0,0,0,0.01)',
-                        margin: '10px',
-                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
-                    }}>
-                    <figure className="image is-128x128">
-                        <img src="/images/products/tuna.jpeg" />
-                        <div>
-                            <div><a>Lorem ipsum</a></div>
-                            <div css={{display: 'flex', justifyContent: 'center'}}>
-                                <div css={{color: '#fa7e03'}}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                <div>(46)</div>
-                            </div>
-                            <div>
-                                <span css={{fontSize: '12px', textDecoration: 'line-through',marginRight: '2px'}}>£2.89</span> 
-                                <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
-                            </div>
-                            <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
-                        </div>
-                    </figure>
-                </div>
-                <div className="column" css={{
-                        textAlign:'center', 
-                        borderTop: '1px solid rgba(0,0,0,0.1)',
-                        backgroundColor: 'rgba(0,0,0,0.01)',
-                        margin: '10px',
-                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
-                    }}>
-                    <figure className="image is-128x128">
-                        <img src="/images/products/cider.jpeg" />
-                        <div>
-                            <div><a>Lorem ipsum</a></div>
-                            <div css={{display: 'flex', justifyContent: 'center'}}>
-                                <div css={{color: '#fa7e03'}}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                <div>(46)</div>
-                            </div>
-                            <div>
-                                <span css={{fontSize: '12px', textDecoration: 'line-through',marginRight: '2px'}}>£2.89</span> 
-                                <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
-                            </div>
-                            <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
-                        </div>
-                    </figure>
-                </div>
-                <div className="column" css={{
-                        textAlign:'center', 
-                        borderTop: '1px solid rgba(0,0,0,0.1)',
-                        backgroundColor: 'rgba(0,0,0,0.01)',
-                        margin: '10px',
-                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
-                    }}>
-                    <figure className="image is-128x128">
-                        <img src="/images/products/fudge.jpeg" />
-                        <div>
-                            <div><a>Lorem ipsum</a></div>
-                            <div css={{display: 'flex', justifyContent: 'center'}}>
-                                <div css={{color: '#fa7e03'}}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                <div>(46)</div>
-                            </div>
-                            <div>
-                                <span css={{fontSize: '12px', textDecoration: 'line-through',marginRight: '2px'}}>£2.89</span> 
-                                <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
-                            </div>
-                            <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
-                        </div>
-                    </figure>
-                </div>
-                <div className="column" css={{
-                        textAlign:'center', 
-                        borderTop: '1px solid rgba(0,0,0,0.1)',
-                        backgroundColor: 'rgba(0,0,0,0.01)',
-                        margin: '10px',
-                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
-                    }}>
-                    <figure className="image is-128x128">
-                        <img src="/images/products/bean.jpeg" />
-                        <div>
-                            <div><a>Lorem ipsum</a></div>
-                            <div css={{display: 'flex', justifyContent: 'center'}}>
-                                <div css={{color: '#fa7e03'}}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                <div>(46)</div>
-                            </div>
-                            <div>
-                                <span css={{fontSize: '12px', textDecoration: 'line-through',marginRight: '2px'}}>£2.89</span> 
-                                <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
-                            </div>
-                            <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
-                        </div>
-                    </figure>
-                </div>
-                <div className="column" css={{
-                        textAlign:'center', 
-                        borderTop: '1px solid rgba(0,0,0,0.1)',
-                        backgroundColor: 'rgba(0,0,0,0.01)',
-                        margin: '10px',
-                        boxShadow: '0 3px 5px rgba(0,0,0,0.3)'
-                    }}>
-                    <figure className="image is-128x128">
-                        <img src="/images/products/fudge1.jpeg" />
-                        <div>
-                            <div><a>Lorem ipsum</a></div>
-                            <div css={{display: 'flex', justifyContent: 'center'}}>
-                                <div css={{color: '#fa7e03'}}>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                                <div>(46)</div>
-                            </div>
-                            <div>
-                                <span css={{fontSize: '12px', textDecoration: 'line-through',marginRight: '2px'}}>£2.89</span> 
-                                <span css={{fontSize: '24px', fontWeight: 'bold'}}>£1.17</span>
-                            </div>
-                            <div>97.5p/100g</div>
-                            <div css={{marginTop: '10px'}}><button className="button is-primary">Add</button></div>
-                        </div>
-                    </figure>
-                </div>
-            </div>
+            ))
+            };
         </div>
+      </div>
     )
 };
 
-export default FeaturedProducts;
+
+const mapStateToProps = (state) => {
+    const {cartItems} = state.data;
+
+    return {
+        cartItems
+}
+};
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatch
+    }
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(FeaturedProducts);

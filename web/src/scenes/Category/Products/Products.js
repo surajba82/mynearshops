@@ -5,7 +5,11 @@ import {updateCart} from '../../../data/data.actions';
 /** @jsx jsx */ import { jsx } from '@emotion/core';
 
 const Products = (props) => {
-    const {products, dispatch} = props;
+    
+    const {products = [], dispatch} = props;
+
+    console.log(products);
+    debugger;
   
     return (
         <div className='columns is-multiline'>

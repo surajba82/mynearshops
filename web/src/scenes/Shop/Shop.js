@@ -33,8 +33,8 @@ class ShopDetail extends Component {
   
   render() {
     const {
-      
       shopUrl,
+      featured,
     } = this.props;
     const shopObj = SHOP[shopUrl];
     
@@ -76,7 +76,7 @@ class ShopDetail extends Component {
           </div>          
         </div>
         <br/><br/>
-        <FeaturedProducts />
+        <FeaturedProducts products={featured} />
       </div>
     )
   }
@@ -86,12 +86,13 @@ export {ShopDetail};
 
 const mapStateToProps = (state) => {
   const {shopDetail} = getDataState(state);
-  const {shopUrl} = shopDetail;
+  const {shopUrl, featured = []} = shopDetail;
   const loading = state.shop.loading;
   const loadingText = state.shop.loadingText;
 
   return {
     shopUrl,
+    featured,
     loading,
     loadingText
   }

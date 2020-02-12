@@ -1,6 +1,68 @@
 {
 	"storeId": "7457368945",
 	"storeName": "Moon Cash & Carry",
+	"featured":[{
+		"_id": "1",
+		"name": "Premier Express Pressure Cooker 2L",
+		"price": "£28.39",
+		"imageUrl": "/images/products/Premier-Express-Pressure-Cooker-2L_250x.jpg"
+	}, {
+		"_id": "2",
+		"name": "Suma Organic Cashews Whole 125g",
+		"price": "£3.99",
+		"offer": "2 for £6.99",
+		"imageUrl": "/images/products/suma-organic-whole-cashew-125-01_250x.jpg"
+	} , {
+		"_id": "3",
+		"name": "Dabur Vatika Hair Oil 150ml",
+		"price": "£1.99",
+		"imageUrl": "/images/products/Dabur-Vatika-Hair-Oil-150ml_250x.jpg"
+	}, {
+		"_id": "4",
+		"name": "Orange Puja Haar 22cm",
+		"price": "£2.39",
+		"imageUrl": "/images/products/Orange-Puja-Haar-14cm_250x.jpg"
+	}, {
+		"_id": "5",
+		"name": "Red Colour Clay Ganesh Idol (21cm)",
+		"price": "£12.69",
+		"imageUrl": "/images/products/ganesh_250x.jpg"
+	} , {
+		"_id": "6",
+		"name": "Ashoka Hot Mango Pickle 500g",
+		"price": "£1.19",
+		"imageUrl": "/images/products/Ashoka-Hot-Mango-Pickle-500g_250x.jpg"
+	}, {
+		"_id": "7",
+		"name": "Zinel Non-Stick Rim Tawa 25cm",
+		"price": "£10.79",
+		"imageUrl": "/images/products/Premier-Express-Pressure-Cooker-2L_250x.jpg"
+	}, {
+		"_id": "8",
+		"name": "TRS Pure Spanish Saffron 1g",
+		"price": "£2.79",
+		"imageUrl": "/images/products/nipra-01_250x.jpg"
+	} , {
+		"_id": "9",
+		"name": "Tilda Basmati Rice 5 Kg",
+		"price": "£12.99",
+		"imageUrl": "/images/products/tilda-pure-basmati-5kg-01_250x.jpg"
+	}, {
+		"_id": "10",
+		"name": "Shana Cut Okra (RINGS) 300g",
+		"price": "£2.19",
+		"imageUrl": "/images/products/shana-okra-sliced-01_250x.jpg"
+	}, {
+		"_id": "11",
+		"name": "KTC Pure Butter Ghee 2KG",
+		"price": "£23.99",
+		"imageUrl": "/images/products/KTC-Pure-Butter-Ghee-2-Kg_250x.jpg"
+	} , {
+		"_id": "12",
+		"name": "Ayumi Natural Neem Powder 100g",
+		"price": "£1.99",
+		"imageUrl": "/images/products/AYY-0005_1024x1024.webp"
+	}],
 	"products": [{
 		"_id": "1",
 		"name": "BOMBAY ONION (1KG)",
